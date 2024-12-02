@@ -1,4 +1,4 @@
-# Chapter 1 - Basics / Introduction 
+# Chapter 1 - Basics / Introduction Checking if it updates
 ## lec 1
  <P> Introduction to ROS2 ,what is that and how it is used 
 
