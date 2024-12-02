@@ -2,12 +2,16 @@
 title = "Team Rudra Programming"
 author = "Team-Rudra-Robocon"
 description = "Documentation for programming-related aspects since 2022."
+text-direction = "ltr"
 
 [build]
 create-missing = true
 
 [output.html]
 default-theme = "dark"
+additional-css = ["css/custom.css"]
+no-section-label = false
+site-url = "https://team-rudra-robocon.github.io/Documentation/"
 
 [output.html.fold]
 enable = true
