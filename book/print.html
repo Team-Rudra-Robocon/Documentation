@@ -1,15 +1,15 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="dark sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>ROS2 Documentation</title>
+        <title>Team Rudra Programming</title>
         <meta name="robots" content="noindex">
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="">
+        <meta name="description" content="Documentation for programming-related aspects since 2022.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -30,12 +30,13 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="src/css/custom.css">
 
 
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "dark";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc.js"></script>
@@ -64,7 +65,7 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             const html = document.documentElement;
-            html.classList.remove('light')
+            html.classList.remove('dark')
             html.classList.add(theme);
             html.classList.add("js");
         </script>
@@ -121,7 +122,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">ROS2 Documentation</h1>
+                    <h1 class="menu-title">Team Rudra Programming</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -153,417 +154,28 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="chapter-1---basics--introduction"><a class="header" href="#chapter-1---basics--introduction">Chapter 1 - Basics / Introduction</a></h1>
-<h2 id="lec-1"><a class="header" href="#lec-1">lec 1</a></h2>
- <P> Introduction to ROS2 ,what is that and how it is used 
-<h2 id="lec-2"><a class="header" href="#lec-2">lec 2</a></h2>
-<P> Its Robot Operating system it provides standerd for robot programming. It helps in
-understaing the robot functionality
-it can help in programming high level functionality using easy programming
-<h4 id="when-to-use-it-"><a class="header" href="#when-to-use-it-">when to use it ?</a></h4>
-<ul>
-<li>when many inputs and output and requires many communication and usecase is that , for mobile
-robot that is used for locomotion of any sort</li>
-</ul>
-<h4 id="what-is-ros2-"><a class="header" href="#what-is-ros2-">what is ROS2 ?</a></h4>
-<p>it provides a way to saperated code into blocks , helps in code saperation , where each node will comunicate with each other which is powerful and scalable
-It even helps in navigation (NAV2)
-it has builtin libraries and can be programmed in many programming language like 1 project in multiple languages
-its even opensource and its awesome for robotics Projects.</p>
-<h2 id="end"><a class="header" href="#end">END</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-2---installation-and-setup"><a class="header" href="#chapter-2---installation-and-setup">Chapter 2 - INstallation and setup</a></h1>
-<h2 id="these-are-the-following-commands-for-installation"><a class="header" href="#these-are-the-following-commands-for-installation">These are the following commands for installation</a></h2>
-<pre><code>sudo apt upgrade 
-</code></pre>
-<pre><code>ocale  # check for UTF-8
-
- sudo apt update &amp;&amp; sudo apt install locales
- sudo locale-gen en_US en_US.UTF-8
- sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
- export LANG=en_US.UTF-8
-
- locale  # verify settings
-</code></pre>
-<pre><code>sudo apt install software-properties-common
- sudo add-apt-repository universe
-</code></pre>
-<pre><code>sudo apt update &amp;&amp; sudo apt install curl -y
- sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
-</code></pre>
-<pre><code>echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release &amp;&amp; echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list &gt; /dev/null
-</code></pre>
-<pre><code>sudo apt update
-</code></pre>
-<pre><code>sudo apt install ros-humble-desktop
-</code></pre>
-<pre><code>echo "source /opt/ros/humble/setup.bash" &gt;&gt; ~/.bashrc
-</code></pre>
-<p>To run example run these on 2 different terminals</p>
-<pre><code>ros2 run demo_nodes_cpp talker
-</code></pre>
-<pre><code>ros2 run demo_nodes_py listener
-</code></pre>
-<h2 id="gazebo-installation"><a class="header" href="#gazebo-installation">Gazebo installation</a></h2>
-<pre><code>sudo apt install ros-humble-gazebo-ros
-  sudo apt install ros-humble-gazebo-plugins
-</code></pre>
-<h2 id="remember-to-source-your-code-before-using-ros2"><a class="header" href="#remember-to-source-your-code-before-using-ros2"><em>Remember to source your code before using ros2</em></a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-3-"><a class="header" href="#chapter-3-">Chapter 3 :</a></h1>
-<p>use python-colcon and install that , and then also use autocomplete for it</p>
-<p>create a workspace for ros2</p>
-<pre><code>mkdir ros2_ws
-</code></pre>
-<h4 id="inside-create-a-src-directory--where-ywe-can-colcon-build-it"><a class="header" href="#inside-create-a-src-directory--where-ywe-can-colcon-build-it">inside create a src directory , where ywe can colcon build it</a></h4>
-<pre><code>colcon build
-</code></pre>
-<p>used for building the workspace and need to source it</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-4--creating-a-node-and-ros2-packages"><a class="header" href="#chapter-4--creating-a-node-and-ros2-packages">Chapter 4 : Creating a Node and ros2 packages</a></h1>
-<p>to create a node we need packages which help you saperate the block of codes eg. packages will saperate tasks of the robot</p>
-<p>To create packages we use</p>
-<pre><code>ros2 pkg &lt;pkg name&gt; --build-type ament_python --dependencies rclpy 
-</code></pre>
-<p>rclpy is the module of python that has Ros2</p>
-<p>After creating a pkg inside src folder , we need to build it , using colcon build</p>
-<pre><code>colcon build
-</code></pre>
-<p>this is done every time a package is created and modefied</p>
-<h3 id="what-is-ros2-node-"><a class="header" href="#what-is-ros2-node-">what is ROS2 node ?</a></h3>
-<p>its a subpart of package , nodes communicate with eachother ans is used to comunicate with each other , nodes are communicating with other packages as well.</p>
-<p>Nodes can be written in any languages , ie one in cpp and other in python , and they stil can communicate with each other</p>
-<p>Creating a node :</p>
-<p>we create a class and that class is your node , it needs a main() function and init and shutdown rclpy
-we can create node by importing node from rclpy</p>
-<h3 id="running-the-node"><a class="header" href="#running-the-node">Running the node</a></h3>
-<ol>
-<li>create executable and launch it</li>
-<li>colcon build it and then source it</li>
-<li>running using python3</li>
-</ol>
-<P>its better to use colcon to run the program ie : ros2 run myRobotController myFirstNode ie using ros2 to run it 
-This has its own benifits 
-<p>installing it is by updating setup.py in the package</p>
-<P>To create a node using OOP we have class , make a class which inherits from node and use that object to access or run a node. There are timer callbacks as well which helps you run a certain code in a specific time interval like the way we write while(1) , but calling the function in a certain amt of time.
-<p>The spin() function in ros is basically a function that keeps the node alive untill forced to closed ie. keyboard interrupts</p>
-<p>The main function will always have the same functions :</p>
-<ol>
-<li>To create a node (node object)</li>
-<li>spin the node or update it</li>
-<li>close the node using shutdown() function</li>
-</ol>
-<h3 id="templete-for-a-ros2-node"><a class="header" href="#templete-for-a-ros2-node">Templete for a ros2 node</a></h3>
-<pre><code>#!/usr/bin/env python3
-import rclpy
-from rclpy.node import Node
- 
- 
-class MyCustomNode(Node): # MODIFY NAME
-    def __init__(self):
-        super().__init__("node_name") # MODIFY NAME
- 
- 
-def main(args=None):
-    rclpy.init(args=args)
-    node = MyCustomNode() # MODIFY NAME
-    rclpy.spin(node)
-    rclpy.shutdown()
- 
- 
-if __name__ == "__main__":
-    main()
-</code></pre>
-<p>This is the basic templete refer this whenever needed.</p>
-<h3 id="renaming-a-node-at-runtime"><a class="header" href="#renaming-a-node-at-runtime">Renaming a node at runtime</a></h3>
-<p>in ros2 you can rename the node say you have 5 lidar sensors then you need to run the same node 5 times , which is not a big issue but running nodes with same name can cause problems , therefore we require renaming it during runtime , it create communication problems and confusion , when you need to see information</p>
-<p>how can you do so ??</p>
-<p>we can use</p>
-<pre><code>ros2 run &lt;pkg_name&gt; &lt;executable_name&gt; --ros-args --remap__node:abc
-</code></pre>
-<p>when we run this the node is reames to abc , and we can do that for each and every node and then use info with that runtime name to fine info for that soecific node.This feature is handy for duplication of nodes.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-5--ros2-libraries-and-more-about-ros2"><a class="header" href="#chapter-5--ros2-libraries-and-more-about-ros2">Chapter 5 : ROS2 Libraries and more about ros2</a></h1>
-<p>we use rclpy for ros2
-its a ros2 library , also called ros client library , its handled purely in c and it helps in host to client library and its the base library as it is in c we need rclpy which is built on top of RCL library. The client library in built on top on rcl library , therefore any languages can have a client library like rclcpp , rcljs etc etc.</p>
-<p>ros2 cli has many commands</p>
-<pre><code>ros2 run
-</code></pre>
-<p>This command expect you to have a package and an executable <br> eg:</p>
-<pre><code>ros2 run myRobotController myFirstNode
-</code></pre>
-<p>here myRobotController is the package and myFirstNode is the executable ,</p>
-<p>if we need to launch a package , the package needs to be installed and should be concol build , the executables can be seen inside the package , PS: Ros2 also has its inbuild packages and executables</p>
-<p>you can use -h to see how the command is used</p>
-<pre><code>ros2 node info/list
-</code></pre>
-<p>this gets you the nodes that are currently running with the list and the info to that node , it also gets you info abt the publisher and subscriber , rosout is oneof the publisher that helps you output the logger function to print the things on the terminal</p>
-<pre><code>ros2 pkg create 
-ros2 run
-ros2 node list
-ros2 node info 
-</code></pre>
-<p>source is important</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-6--colcon"><a class="header" href="#chapter-6--colcon">Chapter 6 : colcon</a></h1>
-<p>colcon is a tool used for build in ros2</p>
-<pre><code>colcon build
-</code></pre>
-<p>it can have many arguements with it aswell , we have autocompletion as well.
-one issue wiht colcon build is , we need to build it everytime we update the program, therefore it can be made a lot faster</p>
-<h3 id="how-can-we-work-faster-with-it-"><a class="header" href="#how-can-we-work-faster-with-it-">how can we work faster with it ?</a></h3>
-<pre><code>colcon build --packages-select my_py_pkg --symlink-install
-</code></pre>
-<p>this will help you directly without needing to colcon build it again and again , symlink helps you do that , to use the symlinkinstall flag remember to make the file executable</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-7--rqt-and-rqt_graph"><a class="header" href="#chapter-7--rqt-and-rqt_graph">Chapter 7 : rqt and rqt_graph</a></h1>
-<p>rqt is a gui tool to debug the tools and nodes , it helps you visualise how the flow of your package is  , rqt is basically a collection of plugins</p>
-<p>rqt_graph is a plugin that helps you visualise the node and communication between the nodes  , the rqt graph is also a node which helps you visualise the nodes in the package.used when you need to know what exactly is happening in the program i write.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-8--turtlesim-intro"><a class="header" href="#chapter-8--turtlesim-intro">Chapter 8 : turtlesim intro</a></h1>
-<h3 id="turtlesim-is-a-package-in-ros2"><a class="header" href="#turtlesim-is-a-package-in-ros2">turtlesim is a package in ros2</a></h3>
-<p>to install turtlesim :</p>
-<pre><code>sudo apt install ros-humble-turtlesim
-</code></pre>
-<p>now we can source bashrc now we can run turtlesim</p>
-<pre><code>ros2 run turtlesim turtlesim_node
-</code></pre>
-<pre><code>ros2 run turtlesim turtle_teleop_key
-</code></pre>
-<p>we can move the turtle using this , rqt graph can tells you how the nodes interact it with eachother</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-9--ros2-topics"><a class="header" href="#chapter-9--ros2-topics">Chapter 9 : ROS2 Topics</a></h1>
-<p>a topic is a critical section in OS , where a publisher publishes to the topic and a subscriber subscribes to a topic , its like a shared space , therefore publisher and subscribers uses topics to publish and subscribe to information. a Topic can have mant publishers and many subscribers the subscribers receive msgs from all the publishers , this can be done by creating a node to publish and subscribe to it.</p>
-<P>A publisher only publishes data , it dosent know who the subscriber is and similarly the subscriber just takes data from the topic and dosent know who published it to the topic.
-similarty a single publisher can publish to different topics as well.
-<p>A topic is used to send a data stream and itis unidirectional there is no feedback a topic has a msg type and the pubs and subs should follow the msg type , this can be written in py , cpp ...directly inside the node. This can help in saperating the code and communicationg using topics.</p>
-<h3 id="creating-a-publisher-"><a class="header" href="#creating-a-publisher-">Creating a Publisher :</a></h3>
-<pre><code>.create_publisher(msg_type , topic_name , 10) 
-</code></pre>
-<p>this function helps in creating a publisher and add the topic name to it  , the topic name is like the critical section , that helps in publishing the information</p>
-<pre><code>.publish(msg)
-</code></pre>
-<p>this helps in publishing the msg to the topic.</p>
-<h3 id="creating-a-subscriber-"><a class="header" href="#creating-a-subscriber-">Creating a Subscriber :</a></h3>
-<pre><code>.create_subscription(msg_type , topic_name , callback_function , 10)
-</code></pre>
-<p>this function creates a subscription to the topic mentioned , it even stored to data into a callback function which needs to be created inside the node itself, then it that data can be printed on the terminal using
-<code>getlogger().info()</code></p>
-<h3 id="more-about-topics-and-how-to-debug-topic-using-command-line-tools"><a class="header" href="#more-about-topics-and-how-to-debug-topic-using-command-line-tools">more about topics and how to debug topic using command line tools</a></h3>
-<pre><code>ros2 topic
-</code></pre>
-<p>this can handle topics and it has many functionalities to debug it</p>
-<pre><code>ros2 topic list
-</code></pre>
-<p>this gets you the list of running topics</p>
-<pre><code>ros2 topic info
-</code></pre>
-<p>this gets you the information of the specified topic</p>
-<pre><code>ros2 topic echo (topic name)
-</code></pre>
-<p>this creates the subscriber on the terminal itslef to ensure that the data is publishing succesfully</p>
-<pre><code>ros2 topic hz (topic name)
-</code></pre>
-<p>this gets you the avg rate and frequency of the running program</p>
-<pre><code>ros2 topic pub -r 10 (topic name)
-</code></pre>
-<p>rate of publishing 10hz here
-say you have 2 publishers publishing at different rates , the receiver / subscriber will receive the data in that rate only , say one publisher is publishing at 10hz and other at 20 hz the publisher publishing at 20hz will send more data than 10hz puublisher , this helps in having different publisher publihs at different rates</p>
-<h3 id="remaping-a-topic-at-runtime"><a class="header" href="#remaping-a-topic-at-runtime">remaping a topic at runtime</a></h3>
-<p>like remaping a node we can also rename a topic at runtime</p>
-<pre><code>ros2 run my_py_pkg robot_news_station --ros-args -r __node:=my_station
-</code></pre>
-<p>something like this , it remaps the node here , to do the same for topic we simply add another flag</p>
-<pre><code>ros2 run my_py_pkg robot_new_station --ros-args -r __node:=my_station -r robot_news:=my_news
-
-ros2 run my_py_pkg robot_news_subscriber --ros-args -r robot_news = my_news 
-</code></pre>
-<p>here robot_news is the hardcoded topic in my publisher and subscriber file , therfore the above command will check if there exixt any robotnews , if it does then it will replace it with mynews , now if you check the subscribtion it will not receive anything as the topic name is changed , you also need to change the topic name for subscriber as well. Now the subs will start printing the data</p>
-<h3 id="monitering-topics-with-rqt_graph"><a class="header" href="#monitering-topics-with-rqt_graph">Monitering topics with rqt_graph</a></h3>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-10---ros2-serviceclient-and-server-architechture"><a class="header" href="#chapter-10---ros2-serviceclient-and-server-architechture">Chapter 10 - ROS2 Service(Client and Server architechture)</a></h1>
-<p>services are used for a client and server interaction</p>
-<p>say we have a weather service which is a server and provides you with weather info
-when loc is provided and you the client trying to access the weather using an http
-request ,</p>
-<p>now what will happen is the client will send a request and the server accepts the
-requestes and it must send back a prooper responce , therefore one client and one
-server can communicate with each other easily but say we have multiple clients , then
-the multiple client will send requests using the same http request , and then the
-server will process the request and then send the responce to the client</p>
-<p>eg. You have a node that controls led panel and that node should communicate to
-outside node , say you need to send a msg to the led node to turn on a LED when
-battery percentage is low , we can do so by creating a service setLED , then creating
-a server inside the LED node , and creating a client that will be the battery percent
-, when the battery percent is low , then the client will send a request/msg through
-the service to the server , msg being turning which light on , this msg is then
-processed and the ligh tis turned on. Then the server will send a responce to that
-client to notify that the request has been successfully performed , ie send a flag.
-The client is waiting syncronusly or asyncronusly for the responce , now say you have
-a full battery , the battery node sends a request through the service to turn off the
-leds , then the same request is processsed by the server and after processing a
-responce or a flag is sent ensure the request has been processed.This is how the ros2
-servies work ?</p>
-<p>You can directly create a service using rcl library , and also it has a single server
-with many nodes for a single service. The service will exist when a server is created.</p>
-<h3 id="creating-a-server"><a class="header" href="#creating-a-server">Creating a server</a></h3>
-<ol>
-<li>A service is created inside the server node</li>
-</ol>
-<pre><code class="language-node.create_service(typeOfService  ">serviceName , callBackFunctionForService)
-</code></pre>
-<p>the above line of code creates a service
-inside the server node , the callback function has the thing that you need to process
-or the request is processed in the callback function that contains 2 parameters ,
-request and responce where responce is returned and request is processed. in ading two
-numbers example the request is the 2 numbers coming from clients and the responce is
-the sum. therefore the callback function does the job of calculating the sum and
-returning the appropriate responce.</p>
-<h3 id="creating-a-client"><a class="header" href="#creating-a-client">Creating a client</a></h3>
-<ol>
-<li>without using oop this method is used directly inside the main function without
-using oop to create a node ie directly creating the node inside the main function.</li>
-</ol>
-<pre><code> node.create_client(typeOfService , serviceName)
-</code></pre>
-<p>This takes in 2 parameters ,
-also it needs to wait for sometime for the request to process we add future</p>
-<pre><code> client.call_async(request) 
-</code></pre>
-<p>this function creates a future ie , waits for
-request to process</p>
-<p>then rather that using .spin() function always we use</p>
-<pre><code>spin_until_future_complete(nodeName , future) 
-</code></pre>
-<p>to spin until the future is complete
-or the request is processed we store the requested responce in a variable and then
-print it .</p>
-<ol start="2">
-<li>with oop what we do using OOP is we create a class inheriting from node like done
-previously , and then what we do is we create a function inside the node that sends
-out requests to the clients , that function creates a client and then adds requests</li>
-</ol>
-<pre><code>self.create_client() 
-</code></pre>
-<p>this create the client this is then used to send requests
-, an object of AddTwoInts.request() is created called as requests and then that stores
-the data to be sent to the server ie the 2 numbers. therfore similar to the future
-used in the not oop case we use future , but to see the responce a callback is
-necessary therefore a callback function is attached to the future which will be called
-as soon as the responce is sent. just like before the callback function does all the
-processing , here printing the respone ie the sum.</p>
-<p>the program without oop is easier and simpler to implement , but th eprogramm using
-oop is standers usually used in a file or a project , it is much more complex but it
-gives us.</p>
-<h2 id="how-to-debug-services-using-cli--terminal"><a class="header" href="#how-to-debug-services-using-cli--terminal">How to debug Services using CLI / Terminal</a></h2>
-<pre><code>ros2 service
-</code></pre>
-<p>this gets you all the commands needed for debugging services</p>
-<pre><code> ros2 service list ros2 service call
-</code></pre>
-<p>this helps in listing all the services and
-the call used to call the service using Terminal ig using the service on Terminal.
-This can be used to debug the service</p>
-<pre><code> ros2 service type
-</code></pre>
-<p>This gets you the type of service that is being
-processed(The first parameter from the create service function)</p>
-<p>rclpy also helps in creating a client and using client service</p>
-<h2 id="remap-a-service-at-runtime"><a class="header" href="#remap-a-service-at-runtime">remap a service at runtime</a></h2>
-<p>just like nodes and topic we cna remap the services as well , similarly by using
-ros-args -r</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-11---ros2-interfaces---messages-and-services"><a class="header" href="#chapter-11---ros2-interfaces---messages-and-services">Chapter 11 - ROS2 interfaces - messages and services</a></h1>
-<h2 id="ros2-interfaces-"><a class="header" href="#ros2-interfaces-">Ros2 Interfaces :</a></h2>
-<p>ros2 interfaces are the packages which store the msg and srv which are used during publishing/subscribing to a topic or creating a service with a specific service type</p>
-<pre><code>ros2 interfaces show example_interfaces
-</code></pre>
-<p>the example_interfaces is a package inbuilt in ros that shows has its own msgs and services init . We can technically create msgs/services inside any pksgs , but its a good practice to keep your msgs/service defination in a single different package , where there is no code just msgs/service defination.</p>
-<h3 id="ros2-msg"><a class="header" href="#ros2-msg">ROS2 msg:</a></h3>
-<p>messages in ROS2 are certain type of information which are published to a topic. the information that we send to the topic are called msgs , therefore that msgs should have a type , the msgs type is what we can change using ros2 msgs. When we create a pulisher we need to specify the msg type as one of the arguements , that msgs type we can customize using ros2 msgs.
-Steps to create the msgs defination for a custom msg type:</p>
-<ol>
-<li>create a pkg for msg/service</li>
-</ol>
-<pre><code>ros2 pkg create (pkg_name_interfaces)
-</code></pre>
-<p>no build type and no dependancies</p>
-<ol start="2">
-<li>now that the build type isnt specifies the file is created in cpp package , therefore remove include and source folder and then create a msg directory inside the pkg.</li>
-<li>before building the msgs , we need to configure the type using cMake and package.xml file .</li>
-<li>inside the package.xml file , we need to add new depend lines below the buildtool depend line :</li>
-</ol>
-<pre><code>&lt;build_depend&gt;rosidl_default_generators&lt;/build_depend&gt; 
-&lt;exec_depend&gt;rosidl_default_runtime&lt;/exec_depend&gt;
-&lt;member_of_group&gt;rosidl_interface_packages&lt;/member_of_group&gt;
-</code></pre>
-<p>this helps in building
-5. Add one line in cmake file as well CMakeLists.txt file under findpackage</p>
-<pre><code>find_package(rosidl_default_generators REQUIRED)
-</code></pre>
-<ol start="6">
-<li>Now we create a msg in the msg directory, create a new file with .msg extention , as a practice always name the msgs/services without the underscores.</li>
-<li>inside the .msg file type the datatype and variable name, eg:</li>
-</ol>
-<pre><code>int64 temperature
-bool are_motors_ready
-string debug_msg
-</code></pre>
-<p>and then save this
-8. Then we need to add the sourcecode in CMake.txt file after the findpackage command :</p>
-<pre><code>rosidl_generate_interfaces({$PROJECT_NAME}
-"msg/&lt;name_of_msg_file.msg&gt;"
-)
-
-ament_export_dependancies(rosidl_default_runtime)
-</code></pre>
-<p>we also need to add the export line inside
-9. then compile and colcon build that package then finally we have finally defined the msg type , now we need to add this msg inside a node to use it.</p>
-<p>we then include the node inside the node oyu want to create publisher/subscriber in</p>
-<h3 id="ros2-service"><a class="header" href="#ros2-service">ROS2 service</a></h3>
-<p>Similar to ROS2 packages , the ROS2 service is used for server/client communication.</p>
-<ol>
-<li>To create a custom srv defination we first need to create a directory inside the package , called "srv"</li>
-<li>Then create the file with extention .srv inside that srv folder , edit the file .srv file with the request and respnce. eg:</li>
-</ol>
-<pre><code>float64 length
-float64 width
-"---" # this creates a gap between only the dashes
-float64 area
-</code></pre>
-<p>inside the interfaces in cMake file add .srv file and add new line insdie it.
-3. then directly build it then the service is ready.use this inside the service type by imprting it .</p>
-<h3 id="debugging-msgs-and-srv-with-command-lineterminal"><a class="header" href="#debugging-msgs-and-srv-with-command-lineterminal">Debugging msgs and Srv with command line(terminal)</a></h3>
-<pre><code>ros2 interface show
-</code></pre>
-<p>helps you see the data inside the msg/ service</p>
-<pre><code>ros2 interface list
-</code></pre>
-<p>this gets you all the interfaces we have .</p>
-<pre><code>ros2 interface package &lt;pkg_name&gt;
-</code></pre>
-<p>this gets you list of all the interfaces with that package</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-12---ros2-parameters"><a class="header" href="#chapter-12---ros2-parameters">Chapter 12 - ROS2 Parameters</a></h1>
-<h3 id="what-is-ros2-parameter-"><a class="header" href="#what-is-ros2-parameter-">What is ROS2 parameter ?</a></h3>
-<p>say you have a program that has a camera(Terminal Driver Node) node which have some variables like Name of USB device , FPS or if you want it to run from simulation mode , to change this we need to change the hardcode and do it again and again . but what if we need to run it 2 time with different times, this is wny hardcoding is not permitted , therefore this is where the parameters comes into picture. parameters are the configuration value that we can change during runtime .
-Therfore we need to declare the parameters inside the nodes and those values can be defined during runtime , now this helps us to start a node with different configuration as we provide the value during runtime. A parameter is specific to a node and is alive only when the node is alive. 2 different nodes have different parameters , a parameter has a name and a datatype , it can be anything .</p>
-<h3 id="declaring-the-parameters-within-a-node"><a class="header" href="#declaring-the-parameters-within-a-node">Declaring the parameters within a node</a></h3>
-<p>we can work with parameters within terminal using</p>
-<pre><code>ros2 param
-</code></pre>
-<p>this is how the parameters are seen from terminal.</p>
-<pre><code>ros2 param get
-</code></pre>
-<p>this gets you the value of parameters.</p>
-<h3 id="how-to-declare-the-parameter-"><a class="header" href="#how-to-declare-the-parameter-">how to declare the parameter .</a></h3>
-<p>inside the node we declate the parameter inside the consructor , with the parameter name . we can set a default value of parameter as well</p>
-<pre><code>declare_paramters("&lt;parameter_name&gt;", &lt;default_param&gt;)
-</code></pre>
-<p>To sent a value of the parameter we need to declale it and then set the value , the value can be set using "ros2 param" command line tool</p>
-<pre><code>ros2 run &lt;pkg_name&gt; &lt;node_name&gt; --ros-args -p &lt;param_name&gt;:= value -p &lt;param_name&gt;:=value
-</code></pre>
-<p>we dont actually set the type , it is dynamically set as in we can set it to string at one point and then int during another runtime , therefore we can declare as many parameters as we want.</p>
-<h3 id="how-to-get-and-use-parameters-inside-the-node"><a class="header" href="#how-to-get-and-use-parameters-inside-the-node">how to get and use parameters inside the node</a></h3>
-<ol>
-<li>Declate parameter</li>
-<li>use another function called</li>
-</ol>
-<pre><code>get_parameter(&lt;param_name&gt;).value
-</code></pre>
-<p>this gets you the parameter object then use that obj to get the obj.</p>
-<ol start="3">
-<li>for providing parameters in terminal we use the "ros2 run -p" command provided above</li>
-</ol>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="arduino"><a class="header" href="#arduino">Arduino</a></h1>
+<p>This section covers programming Arduino Uno, Mega</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="examples-for-arduino"><a class="header" href="#examples-for-arduino">examples for arduino</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="standard-practices"><a class="header" href="#standard-practices">Standard Practices</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="teensy-41"><a class="header" href="#teensy-41">Teensy 4.1</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="libraries"><a class="header" href="#libraries">Libraries</a></h1>
+<p>This section contains all info regarding interfacing libraries written by members of the team</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="multithreading--rtos"><a class="header" href="#multithreading--rtos">Multithreading &amp; RTOS</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ros2-humble-hawksbill"><a class="header" href="#ros2-humble-hawksbill">Ros2 Humble Hawksbill</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-1"><a class="header" href="#chapter-1">Chapter 1</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-2"><a class="header" href="#chapter-2">Chapter 2</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-3"><a class="header" href="#chapter-3">Chapter 3</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-4"><a class="header" href="#chapter-4">Chapter 4</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-5"><a class="header" href="#chapter-5">Chapter 5</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-6"><a class="header" href="#chapter-6">Chapter 6</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-7"><a class="header" href="#chapter-7">Chapter 7</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-8"><a class="header" href="#chapter-8">Chapter 8</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-9"><a class="header" href="#chapter-9">Chapter 9</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-10"><a class="header" href="#chapter-10">Chapter 10</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-11"><a class="header" href="#chapter-11">Chapter 11</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-12"><a class="header" href="#chapter-12">Chapter 12</a></h1>
 
                     </main>
 
