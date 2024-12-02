@@ -8,7 +8,6 @@ create-missing = true
 
 [output.html]
 default-theme = "dark"
-additional-css = ["src/css/custom.css"]  # Add custom styling if needed.
 
 [output.html.fold]
 enable = true
