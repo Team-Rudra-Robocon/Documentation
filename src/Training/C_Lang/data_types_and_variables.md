@@ -7,6 +7,9 @@ When writing embedded systems or robotics code, understanding primitive data typ
 ## Table of Contents
 1. [Primitive Data Types in C](#primitive-data-types-in-c)
 2. [Fixed-Width Integer Types](#fixed-width-integer-types)
+3. [Type Ranges and Overflows](#type-ranges-and-overflows)
+4. [Practical Tips](#practical-tips)
+5. [Debugging and Verification](#debugging-and-verification)
 
 ---
 
@@ -90,7 +93,7 @@ x += 1; // x becomes 0 (wrap-around)
 
 ---
 
-## Practical Tips for Embedded Systems and Robotics
+## Practical Tips
 
 1. **Use `stdint.h` Types**: Always prefer fixed-width types to avoid surprises with type sizes.
    ```c
