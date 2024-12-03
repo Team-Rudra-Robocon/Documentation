@@ -1,6 +1,8 @@
 # Summary
 
 - [Introduction](./index.md)
+- [Training](./Training/index.md)
+  - [C Language](./Training/c_lang.md)
 - [Arduino](./Arduino/index.md)
   - [Examples](./Arduino/examples.md)
 - [Standard Practices](./Standard_Practices/index.md)
