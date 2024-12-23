@@ -73,6 +73,88 @@ if __name__ == "__main__":
 
 This is the basic templete refer this whenever needed.
 
+### ROS2 node in cpp 
+
+similar to python node , a minimal node can be made without using OOP , template for the same will be added here . We create a shared pointer to name the node.in cpp ros2 used shared pointers for making nodes. coz there isnt a need for new and ddelete , therefore shared pointers are used. The spin function expects a node parameter to make the node spin. being cpp we need to compille it therefore use it in "cmakelist" for the same , by using add_executable().
+
+initial ROS2 template without OOP:
+```
+#include "rclcpp/rclcpp.hpp"
+
+int main(int argc ,char **argv){
+    rclcpp::init(argc , argv);
+
+    auto node = std::make_shared<rclcpp::Node>("cpp_test"); //create a shared pointer to create a node
+    RCLCPP_INFO(node->get_logger(), "hello from cpp node");
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+    return 0;
+}
+```
+
+cpp tempelate for rclcpp with OOP and initial Node 
+```
+#include "rclcpp/rclcpp.hpp"
+
+class MyNode: public rclcpp::Node
+{
+    public:
+    MyNode(): Node("cpp_test") {
+        RCLCPP_INFO(this->get_logger(), "hello from cpp node");
+
+    }
+
+    private:
+
+};
+int main(int argc ,char **argv){
+    rclcpp::init(argc , argv);
+
+    auto node = std::make_shared<MyNode>(); //create a shared pointer to create a node
+    // RCLCPP_INFO(node->get_logger(), "hello from cpp node");
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+    return 0;
+}
+```
+
+### C++ node with OOP
+```
+#include "rclcpp/rclcpp.hpp"
+
+class MyNode : public rclcpp::Node
+{
+public:
+    MyNode() : Node("cpp_test") , counter(0)
+    {
+        RCLCPP_INFO(this->get_logger(), "hello from cpp node");
+
+        timer = this->create_wall_timer(std::chrono::seconds(1), std::bind(&MyNode::timerCallback, this));
+    }
+
+private:
+    void timerCallback()
+    {
+        counter++;
+        RCLCPP_INFO(this->get_logger(), "hello %d" , counter);
+    }
+
+
+    rclcpp::TimerBase::SharedPtr timer;
+    int counter;
+};
+int main(int argc, char **argv)
+{
+    rclcpp::init(argc, argv);
+
+    auto node = std::make_shared<MyNode>(); // create a shared pointer to create a node
+    // RCLCPP_INFO(node->get_logger(), "hello from cpp node");
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+    return 0;
+}
+```
+in the above program the counter is initialised in the constructor with value 0. and that value is printed.
 ### Renaming a node at runtime 
 
 in ros2 you can rename the node say you have 5 lidar sensors then you need to run the same node 5 times , which is not a big issue but running nodes with same name can cause problems , therefore we require renaming it during runtime , it create communication problems and confusion , when you need to see information
@@ -86,4 +168,6 @@ ros2 run <pkg_name> <executable_name> --ros-args --remap__node:abc
 ```
 
 when we run this the node is reames to abc , and we can do that for each and every node and then use info with that runtime name to fine info for that soecific node.This feature is handy for duplication of nodes.
+
+### ROS2 timers in cpp :
 
