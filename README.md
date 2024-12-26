@@ -7,4 +7,4 @@ This repo contains the basic documentation of the following:
 4. ROS2 Humble
 5. Teensy 4.1
 ---
-Node : Checkout **SUMMARY.md** for the layout. 
+Note : Checkout **SUMMARY.md** for the layout. 
