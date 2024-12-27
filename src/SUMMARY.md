@@ -35,3 +35,4 @@
   - [Chapter 10](./ROS2_Humble/chapter_10.md)
   - [Chapter 11](./ROS2_Humble/chapter_11.md)
   - [Chapter 12](./ROS2_Humble/chapter_12.md)
+  - [Chapter 13](./ROS2_Humble/chapter_13,md)
