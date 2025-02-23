@@ -1,5 +1,6 @@
 # Chapter 1 - Basics / Introduction Checking if it updates
-
+<sub>**Author**
+Isha Erande</sub>
  <P> Introduction to ROS2 ,what is that and how it is used 
 
 Note : Before starting with ROS2 note that there are many distributions of ROS2 like 

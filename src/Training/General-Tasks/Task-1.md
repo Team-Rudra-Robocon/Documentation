@@ -1,4 +1,6 @@
 # Task 1
+<sub>**Author**
+Pradyumna Ponkshe</sub>
 
 This task introduces you to the Arduino Uno. A handy board for
 beginners and expert enthusiasts alike.

@@ -1,4 +1,7 @@
 # Chapter 8 : turtlesim intro
+<sub>**Author**
+Isha Erande</sub>
+
 
 ### turtlesim is a package in ros2 
 

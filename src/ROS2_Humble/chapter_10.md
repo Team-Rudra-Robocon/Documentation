@@ -1,4 +1,6 @@
 # Chapter 10 - ROS2 Service(Client and Server architechture)
+<sub>**Author**
+Isha Erande</sub>
 
 services are used for a client and server interaction
 

@@ -1,4 +1,6 @@
 # Chapter 2 - INstallation and setup 
+<sub>**Author**
+Isha Erande</sub>
 
 ##  These are the following commands for installation
 

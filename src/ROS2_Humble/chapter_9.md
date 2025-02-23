@@ -1,7 +1,10 @@
 # Chapter 9 : ROS2 Topics
+<sub>**Author**
+Isha Erande</sub>
 
 
-a topic is a critical section in OS , where a publisher publishes to the topic and a subscriber subscribes to a topic , its like a shared space , therefore publisher and subscribers uses topics to publish and subscribe to information. a Topic can have mant publishers and many subscribers the subscribers receive msgs from all the publishers , this can be done by creating a node to publish and subscribe to it.
+
+A topic is a critical section in OS , where a publisher publishes to the topic and a subscriber subscribes to a topic , its like a shared space , therefore publisher and subscribers uses topics to publish and subscribe to information. a Topic can have mant publishers and many subscribers the subscribers receive msgs from all the publishers , this can be done by creating a node to publish and subscribe to it.
 <P>A publisher only publishes data , it dosent know who the subscriber is and similarly the subscriber just takes data from the topic and dosent know who published it to the topic.
 similarty a single publisher can publish to different topics as well.
 

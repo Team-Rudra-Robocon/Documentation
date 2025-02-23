@@ -1,4 +1,7 @@
 # Chapter 7 : rqt and rqt_graph
+<sub>**Author**
+Isha Erande</sub>
+
 
 rqt is a gui tool to debug the tools and nodes , it helps you visualise how the flow of your package is  , rqt is basically a collection of plugins 
 

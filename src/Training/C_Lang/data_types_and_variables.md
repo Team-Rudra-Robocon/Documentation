@@ -1,4 +1,6 @@
 # Data Types and Variables
+<sub>**Author**
+Pradyumna Ponkshe</sub>
 
 When writing embedded systems or robotics code, understanding primitive data types and their sizes is crucial for achieving efficient, reliable, and portable software. This guide focuses on primitive data types, `stdint.h` types, and nuances that can affect your code's performance and correctness.
 

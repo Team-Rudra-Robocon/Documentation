@@ -1,4 +1,7 @@
 # Chapter 4 : Creating a Node and ros2 packages
+<sub>**Author**
+Isha Erande</sub>
+
 
 to create a node we need packages which help you saperate the block of codes eg. packages will saperate tasks of the robot 
 

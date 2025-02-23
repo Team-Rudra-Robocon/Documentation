@@ -7,6 +7,7 @@
   - [C Language](./Training/C_Lang/index.md)
     - [Data Types and Variables](./Training/C_Lang/data_types_and_variables.md)
   - [Cpp](./Training/Cpp/index.md)
+    - [Comments](./Training/Cpp/comments.md)
 - [Arduino](./Arduino/index.md)
   - [AVR Baremetal](./Arduino/avr_baremetal/index.md)
     - [Blink](./Arduino/avr_baremetal/blink.md)

@@ -1,4 +1,8 @@
 # Chapter 12 - ROS2 Parameters 
+<sub>**Author**
+Isha Erande</sub>
+
+
 ### What is ROS2 parameter ? 
  say you have a program that has a camera(Terminal Driver Node) node which have some variables like Name of USB device , FPS or if you want it to run from simulation mode , to change this we need to change the hardcode and do it again and again . but what if we need to run it 2 time with different times, this is wny hardcoding is not permitted , therefore this is where the parameters comes into picture. parameters are the configuration value that we can change during runtime .
  Therfore we need to declare the parameters inside the nodes and those values can be defined during runtime , now this helps us to start a node with different configuration as we provide the value during runtime. A parameter is specific to a node and is alive only when the node is alive. 2 different nodes have different parameters , a parameter has a name and a datatype , it can be anything .

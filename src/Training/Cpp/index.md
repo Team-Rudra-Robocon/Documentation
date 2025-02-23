@@ -1,4 +1,7 @@
 # Welcome
+<sub>**Author**
+Pradyumna Ponkshe</sub>
+
  *This course will teach you upto C++20 standard*
 ```
 NOTE: This documentation isn't being written to give you the history/fun-facts/fullform

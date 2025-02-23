@@ -1,4 +1,7 @@
 # Chapter 13 - ROS2 interfacing with RVIZ and Gazebo 
+<sub>**Author**
+Isha Erande</sub>
+
 
 ## Overview :
 

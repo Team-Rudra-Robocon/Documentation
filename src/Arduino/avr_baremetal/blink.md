@@ -1,4 +1,6 @@
 # Basic Blink
+<sub>**Author**
+Pradyumna Ponkshe</sub>
 
 To make the built-in LED on the UNO blink, you need to understand the concept of bit-shifting first. If you are familiar with the same already, go on ahead to the required section using the TOC below.
 

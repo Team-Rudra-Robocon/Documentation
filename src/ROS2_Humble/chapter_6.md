@@ -1,4 +1,7 @@
 # Chapter 6 : colcon
+<sub>**Author**
+Isha Erande</sub>
+
 
 colcon is a tool used for build in ros2
 
