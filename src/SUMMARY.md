@@ -6,6 +6,7 @@
 - [Languages](./Languages/index.md)
   - [C++](./Languages/Cpp/index.md)
     - [Comments](./Languages/Cpp/comments.md)
+    - [Statements](./Languages/Cpp/statements.md)
 - [Boards](./Boards/index.md)
   - [Teensy](./Boards/Teensy/index.md)
 - [Libraries](./Libraries/index.md)
