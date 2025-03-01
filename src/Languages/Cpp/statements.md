@@ -37,6 +37,14 @@ int foo = 3.14; // the value stored in foo will be 3. (optimised by compiler)
 
 In such cases, the compiler does implicit type-conversion of the given value in order to store it within the specified type of variable. This may cause memory safety issues when the program is given in the hands of inexperienced developers. This is especially the case in a student team of developers. This problem is solved majorly in the Type 2 declaration.
 
+This type of declarations turn out to be especially lengthy, when initialising every variable to 0. As a variable initialised as just ***int var;***, may contain garbage value. Thus the required initialisation for variables becomes:
+
+```cpp
+int var = 0, var_1 = 0, var_2 = 0;
+float foo = 0.0f, foo_1 = 0.0f;
+/*... etc*/
+```
+
 ---
 
 ## Type 2 Declaration
@@ -50,6 +58,14 @@ float bar{3.14};
 char letter{'a'};
 // In case, type-conversion is required, the compiler will throw an error.
 // This helps with a lot of memory issues due to improper variable declaration in many cases.
+```
+
+This type of declarations turns out to be rather convenient, when initialising every variable to 0. As a variable initialised as just ***int var;***, may contain garbage value. Thus the required initialisation for variables becomes:
+
+```cpp
+int var{}, var_1{}, var_2{};
+float foo{}, foo_1{};
+/*... etc*/
 ```
 
 **NOTE:** There are times, where we use macros or library files written by others. In such cases, avoiding memory leaks and overflows due to implicit type-conversion is like playing russian roulette. Writing your variables in such a way ensures that this doesn't happen in at least your case.
