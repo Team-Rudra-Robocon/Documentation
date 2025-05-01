@@ -4,9 +4,10 @@ Isha Erande</sub>
  <P> Introduction to ROS2 ,what is that and how it is used 
 
 Note : Before starting with ROS2 note that there are many distributions of ROS2 like 
-1. Humble
-2. Foxy
-3. jazzy etc. 
+1. Humble(Ubuntu 22)
+2. Foxy (Ubuntu 20)
+3. jazzy (made for Ubuntu 24.04)
+ etc. 
 
 But there distributions only support sonly specific type of OS eg. ROS2 - Humble supports OS uptill Ubuntu 22 and nothing after that. Even the gazebo pairing with each distributions is different , if you choose a different gazebo distribution your program may not work . So check your own Linux version and choose a distribution accordingly. 
  
@@ -26,5 +27,5 @@ it has builtin libraries and can be programmed in many programming language like
 its even opensource and its awesome for robotics Projects.
 
  
-
+Note: I have been using Jazzy for the projects so there may be some changes for other distribution during installation and setup.
 

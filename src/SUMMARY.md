@@ -24,7 +24,9 @@
     - [Chapter 10](./Frameworks/ROS2_Humble/chapter_10.md)
     - [Chapter 11](./Frameworks/ROS2_Humble/chapter_11.md)
     - [Chapter 12](./Frameworks/ROS2_Humble/chapter_12.md)
-    - [Chapter 13](./Frameworks/ROS2_Humble/chapter_13,md)
+    - [Chapter 13](./Frameworks/ROS2_Humble/chapter_13.md)
+    - [Chapter 14](./Frameworks/ROS2_Humble/chapter_14.md)
+    - [Chapter 15](./Frameworks/ROS2_Humble/chapter_15.md)
 - [Miscellaneous](./Misc/index.md)
 
 <!---->
