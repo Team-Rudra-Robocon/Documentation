@@ -27,6 +27,10 @@
     - [Chapter 13](./Frameworks/ROS2_Humble/chapter_13.md)
     - [Chapter 14](./Frameworks/ROS2_Humble/chapter_14.md)
     - [Chapter 15](./Frameworks/ROS2_Humble/chapter_15.md)
+    - [Chapter 16](./Frameworks/ROS2_Humble/chapter_16.md)
+    - [Chapter 17](./Frameworks/ROS2_Humble/chapter_17.md)
+    - [Chapter 18](./Frameworks/ROS2_Humble/chapter_18.md)
+- [Image Processing](./ImageProcessing/index.md) 
 - [Miscellaneous](./Misc/index.md)
 
 <!---->
