@@ -30,6 +30,8 @@
     - [Broadcasting TF with a publisher](./Frameworks/ROS2_Humble/chapter_16.md)
     - [Xacros and urdf](./Frameworks/ROS2_Humble/chapter_17.md)
     - [ROS2 Actions](./Frameworks/ROS2_Humble/chapter_18.md)
+    - [Nav2 stack](./Frameworks/ROS2_Humble/nav2_stack/index.md)
+        - [Introduction](./Frameworks/ROS2_Humble/nav2_stack/chapter_1.md)
 - [Image Processing](./ImageProcessing/index.md) 
 - [Miscellaneous](./Misc/index.md)
 
