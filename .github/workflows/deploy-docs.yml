@@ -29,6 +29,14 @@ jobs:
       - name: Build Site
         run: mkdocs build --config-file mkdocs.yml --site-dir site
 
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DOCS_RTR }}
+          channelId: live
+          projectId: docs-rtr
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

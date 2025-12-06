@@ -1,4 +1,4 @@
-# YOLO Algorithm: Documentation
+# YOLO Algorithm
 
 ## Overview
 
