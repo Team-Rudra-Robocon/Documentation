@@ -1,1 +1,6 @@
 book
+.venv
+.firebase
+.vscode/*
+!.vscode/tasks.json
+site

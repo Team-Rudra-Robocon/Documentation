@@ -1,0 +1,53 @@
+site_name: Team Rudra Documentation
+
+docs_dir: md-pages
+
+theme:
+  name: material
+  favicon: assets/favicon.webp
+  logo: assets/favicon.webp
+  font:
+    text: "Inter"
+    code: "JetBrains Mono"
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: grey
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: grey
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+
+extra_css:
+  - assets/extra.css
+  - https://use.fontawesome.com/releases/v5.15.4/css/all.css
+
+extra_javascript:
+  - assets/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - search
+  - awesome-pages
+  - mkdocs-video
+  - include-markdown
+
+markdown_extensions:
+  - abbr
+  - tables
+  - admonition
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
