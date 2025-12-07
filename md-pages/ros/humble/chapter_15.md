@@ -14,7 +14,7 @@ the main part is to assemble 2 parts of a robot with a joint.
 
 The whole file is in XML format which contains tags to create a link and a joint. Each link n joints have parameters and they work accordingly , The TF is defined in a Joint which connects two links together.
 
-To find more info about the types of joints n tags , you can chekout [This link](https://wiki.ros.org/urdf/XML)
+To find more info about the types of joints n tags , you can checkout [This link](https://wiki.ros.org/urdf/XML)
 ~~~
 <?xml version="1.0"?>
 <robot name="my_robot"> 
@@ -43,7 +43,7 @@ To find more info about the types of joints n tags , you can chekout [This link]
         </visual>
     </link>
 
-    <joint name="base_seond_joint" type = "revolute">
+    <joint name="base_second_joint" type = "revolute">
         <!-- the parent n child is the type of relation bet them and the origin defines the origin  of TF , axis tag only used when joint type is revolute , where a limit is added for rotation -->
         <parent link="base_link" />
         <child link ="second_link" />

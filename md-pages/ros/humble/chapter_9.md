@@ -4,11 +4,11 @@ Isha Erande</sub>
 
 
 
-A topic is a critical section in OS , where a publisher publishes to the topic and a subscriber subscribes to a topic , its like a shared space , therefore publisher and subscribers uses topics to publish and subscribe to information. a Topic can have mant publishers and many subscribers the subscribers receive msgs from all the publishers , this can be done by creating a node to publish and subscribe to it.
-<P>A publisher only publishes data , it dosent know who the subscriber is and similarly the subscriber just takes data from the topic and dosent know who published it to the topic.
-similarty a single publisher can publish to different topics as well.
+A topic is a critical section in OS , where a publisher publishes to the topic and a subscriber subscribes to a topic , its like a shared space , therefore publisher and subscribers uses topics to publish and subscribe to information. a Topic can have many publishers and many subscribers the subscribers receive msgs from all the publishers , this can be done by creating a node to publish and subscribe to it.
+<P>A publisher only publishes data , it doesn't know who the subscriber is and similarly the subscriber just takes data from the topic and doesn't know who published it to the topic.
+similarly a single publisher can publish to different topics as well.
 
-A topic is used to send a data stream and itis unidirectional there is no feedback a topic has a msg type and the pubs and subs should follow the msg type , this can be written in py , cpp ...directly inside the node. This can help in saperating the code and communicationg using topics.
+A topic is used to send a data stream and it is unidirectional there is no feedback a topic has a msg type and the pubs and subs should follow the msg type , this can be written in py , cpp ...directly inside the node. This can help in separating the code and communicating using topics.
 
 
 
@@ -52,7 +52,7 @@ this gets you the information of the specified topic
 ros2 topic echo (topic name)
 ```
 
-this creates the subscriber on the terminal itslef to ensure that the data is publishing succesfully
+this creates the subscriber on the terminal itself to ensure that the data is publishing successfully
 ```
 ros2 topic hz (topic name)
 ```
@@ -62,11 +62,11 @@ this gets you the avg rate and frequency of the running program
 ros2 topic pub -r 10 (topic name)
 ```
 rate of publishing 10hz here
-say you have 2 publishers publishing at different rates , the receiver / subscriber will receive the data in that rate only , say one publisher is publishing at 10hz and other at 20 hz the publisher publishing at 20hz will send more data than 10hz puublisher , this helps in having different publisher publish at different rates
+say you have 2 publishers publishing at different rates , the receiver / subscriber will receive the data in that rate only , say one publisher is publishing at 10hz and other at 20 hz the publisher publishing at 20hz will send more data than 10hz publisher , this helps in having different publisher publish at different rates
 
-### remaping a topic at runtime
+### remapping a topic at runtime
 
-like remaping a node we can also rename a topic at runtime 
+like remapping a node we can also rename a topic at runtime 
 ```
 ros2 run my_py_pkg robot_news_station --ros-args -r __node:=my_station
 ```
@@ -77,7 +77,7 @@ ros2 run my_py_pkg robot_new_station --ros-args -r __node:=my_station -r robot_n
 
 ros2 run my_py_pkg robot_news_subscriber --ros-args -r robot_news = my_news 
 ```
-here robot_news is the hardcoded topic in my publisher and subscriber file , therfore the above command will check if there exixt any robotnews , if it does then it will replace it with mynews , now if you check the subscribtion it will not receive anything as the topic name is changed , you also need to change the topic name for subscriber as well. Now the subs will start printing the data 
+here robot_news is the hardcoded topic in my publisher and subscriber file , therefore the above command will check if there exist any "robotnews" , if it does then it will replace it with "mynews" , now if you check the subscription it will not receive anything as the topic name is changed , you also need to change the topic name for subscriber as well. Now the subs will start printing the data 
 
 
 ### Monitering topics with rqt_graph

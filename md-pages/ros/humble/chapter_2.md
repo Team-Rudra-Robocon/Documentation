@@ -8,7 +8,7 @@ Isha Erande</sub>
 sudo apt upgrade 
 ```
 ```
-ocale  # check for UTF-8
+ locale  # check for UTF-8
 
  sudo apt update && sudo apt install locales
  sudo locale-gen en_US en_US.UTF-8
