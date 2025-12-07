@@ -25,3 +25,9 @@ ament_cmake
 ament_python
 dpkg
 codebasics
+pkgs
+mathjax
+pymdownx
+markdown
+chrono
+bringup
