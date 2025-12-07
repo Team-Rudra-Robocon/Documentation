@@ -40,7 +40,7 @@ nav:
 - **Code and math.** Prefer fenced code blocks with explicit languages (```` ```bash ````). MathJax is preloaded, so inline `$math$` and block `$$ math $$` render correctly.
 - **Image Size**: Resize images to keep them small. This reduces the size bloat added to the documentation causing the pull size to drastically increase everytime contributions are made.
 
-## Before you open a PR
+## Before you open a PR (Merges can only be maded through Pull Requests)
 
 - Preview locally and ensure there are no MkDocs build warnings.
 - Check navigation (tabs, sidebar) for your new content and confirm the order matches `.pages`.

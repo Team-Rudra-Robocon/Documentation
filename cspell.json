@@ -1,0 +1,28 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "allowCompoundWords": false,
+  "ignorePaths": [
+    ".git",
+    ".github",
+    ".venv",
+    "site",
+    "node_modules",
+    "*.png",
+    "*.jpg",
+    "*.jpeg",
+    "*.gif",
+    "*.webp",
+    "*.pdf"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "doc-terms",
+      "path": "./.dictionary",
+      "addWords": true
+    }
+  ],
+  "ignoreCase": true,
+
+  "dictionaries": ["doc-terms"]
+}

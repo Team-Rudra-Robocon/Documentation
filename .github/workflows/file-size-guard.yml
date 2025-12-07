@@ -1,0 +1,41 @@
+name: file-size-guard
+
+on:
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  enforce-limit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Ensure no tracked file is >50 KB
+        run: |
+          python - <<'PY'
+          import subprocess
+          import pathlib
+          import sys
+
+          MAX_BYTES = 50 * 1024
+          repo_files = subprocess.check_output(["git", "ls-files", "-z"])
+          offenders = []
+          for path in repo_files.split(b"\x00"):
+              if not path:
+                  continue
+              p = pathlib.Path(path.decode("utf-8"))
+              if not p.is_file():
+                  continue
+              size = p.stat().st_size
+              if size > MAX_BYTES:
+                  offenders.append(f"{p} ({size} bytes)")
+
+          if offenders:
+              print("Files exceed 50 KB:\n" + "\n".join(offenders))
+              sys.exit(1)
+          else:
+              print("All tracked files are within the 50 KB limit.")
+          PY
