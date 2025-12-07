@@ -38,9 +38,9 @@ nav:
 - **Create indexes.** Every new section folder should include an `index.md` so MkDocs Material can render section landing pages and breadcrumb trails correctly. Not mandatory but recommended.
 - **Use MkDocs Material features.** All Markdown is processed through Material’s extensions (admonitions, tables, callouts, etc.). Keep content lightweight but structured with headings, numbered steps, and callouts (`!!! note`, `!!! warning`) where they help the reader.
 - **Code and math.** Prefer fenced code blocks with explicit languages (```` ```bash ````). MathJax is preloaded, so inline `$math$` and block `$$ math $$` render correctly.
-- **Image Size**: Resize images to keep them small. This reduces the size bloat added to the documentation causing the pull size to drastically increase everytime contributions are made.
+- **Image Size**: Resize images to keep them small. This reduces the size bloat added to the documentation causing the pull size to drastically increase every time contributions are made.
 
-## Before you open a PR (Merges can only be maded through Pull Requests)
+## Before you open a PR (Merges can only be made through Pull Requests)
 
 - Preview locally and ensure there are no MkDocs build warnings.
 - Check navigation (tabs, sidebar) for your new content and confirm the order matches `.pages`.

@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -21,5 +23,28 @@ jobs:
       - name: Install cspell
         run: npm install --global cspell
 
+      - name: Collect changed files
+        id: changed
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth=1
+          files=$(git diff --name-only --diff-filter=ACMRT origin/${{ github.base_ref }}...HEAD | \
+            grep -E '\.(md|ya?ml|py|json)$' || true)
+          if [ -z "$files" ]; then
+            echo "files=" >> "$GITHUB_OUTPUT"
+          else
+            {
+              echo "files<<'EOF'"
+              echo "$files"
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Run cspell
-        run: cspell lint --no-progress --show-context "**/*.md" "**/*.yml" "**/*.yaml" "**/*.py" "**/*.json"
+        if: steps.changed.outputs.files != ''
+        run: |
+          echo "${{ steps.changed.outputs.files }}" | tr '\n' '\0' | \
+            xargs -0 cspell lint --no-progress --show-context
+
+      - name: Skip cspell (no relevant changes)
+        if: steps.changed.outputs.files == ''
+        run: echo "No Markdown/YAML/Python/JSON files changed in this PR diff."

@@ -19,10 +19,12 @@
     {
       "name": "doc-terms",
       "path": "./.dictionary",
-      "addWords": true
+      "addWords": true,
+      "ignoreCase": true
     }
   ],
-  "ignoreCase": true,
-
-  "dictionaries": ["doc-terms"]
+  "dictionaries": ["doc-terms"],
+  "ignoreRegExpList": [
+    "/\\b[A-Z][a-zA-Z]+\\b/g"
+  ]
 }
