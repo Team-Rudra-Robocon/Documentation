@@ -7,7 +7,7 @@ YOLO (You Only Look Once) is a real-time object detection algorithm renowned for
 ## Working Principle
 
 - **Single Pass Detection:**  
-  YOLO analyzes the entire image in one go, not through sliding windows or multiple region proposals.
+  YOLO analyses the entire image in one go, not through sliding windows or multiple region proposals.
 
 - **Grid Division:**  
   The image is divided into an \( S \times S \) grid (e.g., 4x4, 13x13). Each grid cell is responsible for detecting objects whose centers fall inside it.

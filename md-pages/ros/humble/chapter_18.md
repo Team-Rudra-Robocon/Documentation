@@ -4,7 +4,7 @@ Isha Erande</sub>
 
 
 Actions are communication types used for long running tasks 
-They have 3 Parts (built on top of client - server architechture)
+They have 3 Parts (built on top of client - server architecture)
 1. Goal 
 2. feedback 
 3. result 
