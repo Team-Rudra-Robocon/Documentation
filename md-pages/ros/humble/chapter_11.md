@@ -7,11 +7,11 @@ ros2 interfaces are the packages which store the msg and srv which are used duri
 ```
 ros2 interfaces show example_interfaces
 ```
-the example_interfaces is a package inbuilt in ros that shows has its own msgs and services init . We can technically create msgs/services inside any pksgs , but its a good practice to keep your msgs/service defination in a single different package , where there is no code just msgs/service defination.
+the example_interfaces is a package inbuilt in ros that shows has its own msgs and services init . We can technically create msgs/services inside any pkgs , but its a good practice to keep your msgs/service definition in a single different package , where there is no code just msgs/service definition.
 
 ### ROS2 msg:
 messages in ROS2 are certain type of information which are published to a topic. the information that we send to the topic are called msgs , therefore that msgs should have a type , the msgs type is what we can change using ros2 msgs. When we create a pulisher we need to specify the msg type as one of the arguements , that msgs type we can customize using ros2 msgs. 
-Steps to create the msgs defination for a custom msg type:
+Steps to create the msgs definition for a custom msg type:
 1. create a pkg for msg/service
 ```
 ros2 pkg create (pkg_name_interfaces)
@@ -54,7 +54,7 @@ we then include the node inside the node oyu want to create publisher/subscriber
 
 ### ROS2 service 
  Similar to ROS2 packages , the ROS2 service is used for server/client communication. 
-1. To create a custom srv defination we first need to create a directory inside the package , called "srv"
+1. To create a custom srv definition we first need to create a directory inside the package , called "srv"
 2. Then create the file with extention .srv inside that srv folder , edit the file .srv file with the request and respnce. eg:
 ```
 float64 length

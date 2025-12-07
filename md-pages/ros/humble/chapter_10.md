@@ -1,4 +1,4 @@
-# ROS2 Service(Client and Server architechture)
+# ROS2 Service(Client and Server architecture)
 <sub>**Author**
 Isha Erande</sub>
 
@@ -9,10 +9,10 @@ when loc is provided and you the client trying to access the weather using an ht
 request ,
 
 now what will happen is the client will send a request and the server accepts the 
-requestes and it must send back a prooper responce , therefore one client and one 
+requests and it must send back a proper response , therefore one client and one 
 server can communicate with each other easily but say we have multiple clients , then 
 the multiple client will send requests using the same http request , and then the 
-server will process the request and then send the responce to the client
+server will process the request and then send the response to the client
 
 eg. You have a node that controls led panel and that node should communicate to 
 outside node , say you need to send a msg to the led node to turn on a LED when 
@@ -20,13 +20,13 @@ battery percentage is low , we can do so by creating a service setLED , then cre
 a server inside the LED node , and creating a client that will be the battery percent 
 , when the battery percent is low , then the client will send a request/msg through 
 the service to the server , msg being turning which light on , this msg is then 
-processed and the ligh tis turned on. Then the server will send a responce to that 
+processed and the light is turned on. Then the server will send a response to that 
 client to notify that the request has been successfully performed , ie send a flag. 
-The client is waiting syncronusly or asyncronusly for the responce , now say you have 
+The client is waiting synchronously or asynchronously for the response , now say you have 
 a full battery , the battery node sends a request through the service to turn off the 
-leds , then the same request is processsed by the server and after processing a 
-responce or a flag is sent ensure the request has been processed.This is how the ros2 
-servies work ?
+leds , then the same request is processed by the server and after processing a 
+response or a flag is sent ensure the request has been processed.This is how the ros2 
+service work ?
 
 You can directly create a service using rcl library , and also it has a single server 
 with many nodes for a single service. The service will exist when a server is created.
@@ -39,10 +39,10 @@ serviceName , callBackFunctionForService)
 the above line of code creates a service 
 inside the server node , the callback function has the thing that you need to process 
 or the request is processed in the callback function that contains 2 parameters , 
-request and responce where responce is returned and request is processed. in ading two 
-numbers example the request is the 2 numbers coming from clients and the responce is 
+request and response where response is returned and request is processed. in adding two 
+numbers example the request is the 2 numbers coming from clients and the response is 
 the sum. therefore the callback function does the job of calculating the sum and 
-returning the appropriate responce.
+returning the appropriate response.
 
 ### Creating a client
 1. without using oop this method is used directly inside the main function without 
@@ -65,7 +65,7 @@ spin_until_future_complete(nodeName , future)
 ```
  
 to spin until the future is complete 
-or the request is processed we store the requested responce in a variable and then 
+or the request is processed we store the requested response in a variable and then 
 print it .
 
 
@@ -78,10 +78,10 @@ self.create_client()
  
 this create the client this is then used to send requests 
 , an object of AddTwoInts.request() is created called as requests and then that stores 
-the data to be sent to the server ie the 2 numbers. therfore similar to the future 
-used in the not oop case we use future , but to see the responce a callback is 
+the data to be sent to the server ie the 2 numbers. therefore similar to the future 
+used in the not oop case we use future , but to see the response a callback is 
 necessary therefore a callback function is attached to the future which will be called 
-as soon as the responce is sent. just like before the callback function does all the 
+as soon as the response is sent. just like before the callback function does all the 
 processing , here printing the respone ie the sum.
 
 the program without oop is easier and simpler to implement , but the program using 
@@ -90,7 +90,7 @@ gives us.
 
 ### ROS2 client for cpp 
 
-the issue with creating a client with oop is that , while calling the callback function inside the constructor the "future.get()" function will stop the execition and the the node will not spin therfore we need to call the callbackservicce function on a new thread , for that you need to create new thread and use that for calling that function thereby letting the program execute
+the issue with creating a client with oop is that , while calling the callback function inside the constructor the "future.get()" function will stop the execution and the the node will not spin therfore we need to call the callback service function on a new thread , for that you need to create new thread and use that for calling that function thereby letting the program execute
 
 
 ## How to debug Services using CLI / Terminal
