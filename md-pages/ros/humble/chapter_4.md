@@ -3,7 +3,7 @@
 Isha Erande</sub>
 
 
-to create a node we need packages which help you saperate the block of codes eg. packages will saperate tasks of the robot 
+to create a node we need packages which help you separate the block of codes eg. packages will separate tasks of the robot 
 
 To create packages we use 
 
@@ -17,13 +17,13 @@ After creating a pkg inside src folder , we need to build it , using colcon buil
 ```
 colcon build
 ```
-this is done every time a package is created and modefied
+this is done every time a package is created and modified
 
 
 ### what is ROS2 node ? 
-its a subpart of package , nodes communicate with eachother ans is used to comunicate with each other , nodes are communicating with other packages as well.
+its a subpart of package , nodes communicate with each other ans is used to communicate with each other , nodes are communicating with other packages as well.
 
-Nodes can be written in any languages , ie one in cpp and other in python , and they stil can communicate with each other
+Nodes can be written in any languages , ie one in cpp and other in python , and they still can communicate with each other
 
 Creating a node : 
 
@@ -38,20 +38,20 @@ we can create node by importing node from rclpy
 3. running using python3
 
 <P>its better to use colcon to run the program ie : ros2 run myRobotController myFirstNode ie using ros2 to run it 
-This has its own benifits 
+This has its own benefits 
 
 installing it is by updating setup.py in the package
 
 <P>To create a node using OOP we have class , make a class which inherits from node and use that object to access or run a node. There are timer callbacks as well which helps you run a certain code in a specific time interval like the way we write while(1) , but calling the function in a certain amt of time.
 
-The spin() function in ros is basically a function that keeps the node alive untill forced to closed ie. keyboard interrupts
+The spin() function in ros is basically a function that keeps the node alive until forced to closed ie. keyboard interrupts
 
 The main function will always have the same functions :
 1. To create a node (node object)
 2. spin the node or update it 
 3. close the node using shutdown() function 
 
-### Templete for a ros2 node 
+### Tempelate for a ros2 node 
 ```
 #!/usr/bin/env python3
 import rclpy
@@ -74,11 +74,11 @@ if __name__ == "__main__":
     main()
 ```
 
-This is the basic templete refer this whenever needed.
+This is the basic template refer this whenever needed.
 
 ### ROS2 node in cpp 
 
-similar to python node , a minimal node can be made without using OOP , template for the same will be added here . We create a shared pointer to name the node.in cpp ros2 used shared pointers for making nodes. coz there isnt a need for new and ddelete , therefore shared pointers are used. The spin function expects a node parameter to make the node spin. being cpp we need to compille it therefore use it in "cmakelist" for the same , by using add_executable().
+similar to python node , a minimal node can be made without using OOP , template for the same will be added here . We create a shared pointer to name the node.in cpp ros2 used shared pointers for making nodes. coz there isn't a need for new and delete , therefore shared pointers are used. The spin function expects a node parameter to make the node spin. being cpp we need to compile it therefore use it in "cmakelist" for the same , by using add_executable().
 
 initial ROS2 template without OOP:
 ```
@@ -95,7 +95,7 @@ int main(int argc ,char **argv){
 }
 ```
 
-cpp tempelate for rclcpp with OOP and initial Node 
+cpp template for rclcpp with OOP and initial Node 
 ```
 #include "rclcpp/rclcpp.hpp"
 
@@ -170,6 +170,6 @@ we can use
 ros2 run <pkg_name> <executable_name> --ros-args --remap__node:abc
 ```
 
-when we run this the node is reames to abc , and we can do that for each and every node and then use info with that runtime name to fine info for that soecific node.This feature is handy for duplication of nodes.
+when we run this the node is remap to abc , and we can do that for each and every node and then use info with that runtime name to fine info for that specific node.This feature is handy for duplication of nodes.
 
 ### ROS2 timers in cpp :

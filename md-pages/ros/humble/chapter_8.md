@@ -17,4 +17,4 @@ ros2 run turtlesim turtlesim_node
 ```
 ros2 run turtlesim turtle_teleop_key
 ```
-we can move the turtle using this , rqt graph can tells you how the nodes interact it with eachother
+we can move the turtle using this , rqt graph can tells you how the nodes interact it with each other

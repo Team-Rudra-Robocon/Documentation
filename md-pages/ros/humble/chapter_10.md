@@ -82,7 +82,7 @@ the data to be sent to the server ie the 2 numbers. therefore similar to the fut
 used in the not oop case we use future , but to see the response a callback is 
 necessary therefore a callback function is attached to the future which will be called 
 as soon as the response is sent. just like before the callback function does all the 
-processing , here printing the respone ie the sum.
+processing , here printing the response ie the sum.
 
 the program without oop is easier and simpler to implement , but the program using 
 oop is usually used in a file or a project , it is much more complex but it 
@@ -90,7 +90,7 @@ gives us.
 
 ### ROS2 client for cpp 
 
-the issue with creating a client with oop is that , while calling the callback function inside the constructor the "future.get()" function will stop the execution and the the node will not spin therfore we need to call the callback service function on a new thread , for that you need to create new thread and use that for calling that function thereby letting the program execute
+the issue with creating a client with oop is that , while calling the callback function inside the constructor the "future.get()" function will stop the execution and the the node will not spin therefore we need to call the callback service function on a new thread , for that you need to create new thread and use that for calling that function thereby letting the program execute
 
 
 ## How to debug Services using CLI / Terminal

@@ -13,6 +13,7 @@ rviz
 rgba
 rclpy
 rclcpp
+rcljs
 python3
 publisher
 subscriber
@@ -31,3 +32,10 @@ pymdownx
 markdown
 chrono
 bringup
+rosout
+getlogger
+color
+cmakelist
+teleop
+robotnews
+mynews

@@ -11,11 +11,11 @@ We have a URDF file ,
 5. This /tf topic will be used by other nodes.
 
 ### What is a launch file ?
- a launch file is basically a file which when executed , it runs multiple programs / set of commands at once , without the need to run many commands manuall yon terminal , 
+ a launch file is basically a file which when executed , it runs multiple programs / set of commands at once , without the need to run many commands manually on terminal , 
  
  in ROS2 , the launch file launches the whole set of files like urdf , rviz and even the nodes which are connected to the urdf which help in motion of the robot.
 launch files can be of 2 types : a python file or an xml file , 
-ROS1 always worked on XML while python launch file was implemented in ros2 , and thas is most commonly used today , 
+ROS1 always worked on XML while python launch file was implemented in ros2 , and that's is most commonly used today , 
 
 Note: you can create a python launch file in xml as well.
 

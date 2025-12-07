@@ -21,15 +21,15 @@ ros2 param get
 this gets you the value of parameters.
 
 ### how to declare the parameter . 
- inside the node we declate the parameter inside the consructor , with the parameter name . we can set a default value of parameter as well  
+ inside the node we declare the parameter inside the constructor , with the parameter name . we can set a default value of parameter as well  
 ```
-declare_paramters("<parameter_name>", <default_param>)
+declare_parameters("<parameter_name>", <default_param>)
 ```
-To sent a value of the parameter we need to declale it and then set the value , the value can be set using "ros2 param" command line tool
+To sent a value of the parameter we need to declare it and then set the value , the value can be set using "ros2 param" command line tool
 ```
 ros2 run <pkg_name> <node_name> --ros-args -p <param_name>:= value -p <param_name>:=value
 ```
-we dont actually set the type , it is dynamically set as in we can set it to string at one point and then int during another runtime , therefore we can declare as many parameters as we want. 
+we don't actually set the type , it is dynamically set as in we can set it to string at one point and then int during another runtime , therefore we can declare as many parameters as we want. 
 
 ### how to get and use parameters inside the node 
 1. Declate parameter
