@@ -35,3 +35,7 @@ bringup
 rosout
 getlogger
 color
+cmakelist
+teleop
+robotnews
+mynews

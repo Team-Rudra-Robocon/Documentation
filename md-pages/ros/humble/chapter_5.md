@@ -17,7 +17,7 @@ ros2 run myRobotController myFirstNode
 ```
 here myRobotController is the package and myFirstNode is the executable , 
 
-if we need to launch a package , the package needs to be installed and should be concole build , the executables can be seen inside the package , PS: Ros2 also has its inbuilt packages and executables 
+if we need to launch a package , the package needs to be installed and should be console build , the executables can be seen inside the package , PS: Ros2 also has its inbuilt packages and executables 
 
 you can use -h to see how the command is used 
 

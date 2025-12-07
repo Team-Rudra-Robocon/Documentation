@@ -4,7 +4,7 @@ Isha Erande</sub>
  
  URDF : Unified Robot Discription Format
 
-- it a file that describles all the functions and elements of the robot.
+- it a file that describes all the functions and elements of the robot.
 - its used to generate Tfs
 - its in XML 
 

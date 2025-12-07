@@ -74,11 +74,11 @@ if __name__ == "__main__":
     main()
 ```
 
-This is the basic templete refer this whenever needed.
+This is the basic template refer this whenever needed.
 
 ### ROS2 node in cpp 
 
-similar to python node , a minimal node can be made without using OOP , template for the same will be added here . We create a shared pointer to name the node.in cpp ros2 used shared pointers for making nodes. coz there isnt a need for new and ddelete , therefore shared pointers are used. The spin function expects a node parameter to make the node spin. being cpp we need to compille it therefore use it in "cmakelist" for the same , by using add_executable().
+similar to python node , a minimal node can be made without using OOP , template for the same will be added here . We create a shared pointer to name the node.in cpp ros2 used shared pointers for making nodes. coz there isn't a need for new and delete , therefore shared pointers are used. The spin function expects a node parameter to make the node spin. being cpp we need to compile it therefore use it in "cmakelist" for the same , by using add_executable().
 
 initial ROS2 template without OOP:
 ```
@@ -95,7 +95,7 @@ int main(int argc ,char **argv){
 }
 ```
 
-cpp tempelate for rclcpp with OOP and initial Node 
+cpp template for rclcpp with OOP and initial Node 
 ```
 #include "rclcpp/rclcpp.hpp"
 
@@ -170,6 +170,6 @@ we can use
 ros2 run <pkg_name> <executable_name> --ros-args --remap__node:abc
 ```
 
-when we run this the node is reamap to abc , and we can do that for each and every node and then use info with that runtime name to fine info for that specific node.This feature is handy for duplication of nodes.
+when we run this the node is remap to abc , and we can do that for each and every node and then use info with that runtime name to fine info for that specific node.This feature is handy for duplication of nodes.
 
 ### ROS2 timers in cpp :

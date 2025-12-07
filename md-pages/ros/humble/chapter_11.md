@@ -45,7 +45,7 @@ rosidl_generate_interfaces({$PROJECT_NAME}
 "msg/<name_of_msg_file.msg>"
 )
 
-ament_export_dependancies(rosidl_default_runtime)
+ament_export_dependencies(rosidl_default_runtime)
 ```
 we also need to add the export line inside 
 9. then compile and colcon build that package then finally we have finally defined the msg type , now we need to add this msg inside a node to use it. 
@@ -55,7 +55,7 @@ we then include the node inside the node oyu want to create publisher/subscriber
 ### ROS2 service 
  Similar to ROS2 packages , the ROS2 service is used for server/client communication. 
 1. To create a custom srv definition we first need to create a directory inside the package , called "srv"
-2. Then create the file with extention .srv inside that srv folder , edit the file .srv file with the request and response. eg:
+2. Then create the file with extension .srv inside that srv folder , edit the file .srv file with the request and response. eg:
 ```
 float64 length
 float64 width
