@@ -62,7 +62,7 @@ this gets you the avg rate and frequency of the running program
 ros2 topic pub -r 10 (topic name)
 ```
 rate of publishing 10hz here
-say you have 2 publishers publishing at different rates , the receiver / subscriber will receive the data in that rate only , say one publisher is publishing at 10hz and other at 20 hz the publisher publishing at 20hz will send more data than 10hz puublisher , this helps in having different publisher publihs at different rates
+say you have 2 publishers publishing at different rates , the receiver / subscriber will receive the data in that rate only , say one publisher is publishing at 10hz and other at 20 hz the publisher publishing at 20hz will send more data than 10hz puublisher , this helps in having different publisher publish at different rates
 
 ### remaping a topic at runtime
 

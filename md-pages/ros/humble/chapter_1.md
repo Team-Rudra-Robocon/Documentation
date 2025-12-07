@@ -11,7 +11,7 @@ Note : Before starting with ROS2 note that there are many distributions of ROS2 
 
 But there distributions only support sonly specific type of OS eg. ROS2 - Humble supports OS uptill Ubuntu 22 and nothing after that. Even the gazebo pairing with each distributions is different , if you choose a different gazebo distribution your program may not work . So check your own Linux version and choose a distribution accordingly. 
  
-<P> Its Robot Operating system it provides standerd for robot programming. It helps in
+<P> Its Robot Operating system it provides standard for robot programming. It helps in
 understaing the robot functionality
 it can help in programming high level functionality using easy programming
 it has packages which help in easily programming a robot with Nav2 and Rviz.

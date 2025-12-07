@@ -84,8 +84,8 @@ necessary therefore a callback function is attached to the future which will be 
 as soon as the responce is sent. just like before the callback function does all the 
 processing , here printing the respone ie the sum.
 
-the program without oop is easier and simpler to implement , but th eprogramm using 
-oop is standers usually used in a file or a project , it is much more complex but it 
+the program without oop is easier and simpler to implement , but the program using 
+oop is usually used in a file or a project , it is much more complex but it 
 gives us.
 
 ### ROS2 client for cpp 
