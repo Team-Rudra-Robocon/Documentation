@@ -2,3 +2,4 @@ nav:
     - index.md
     - ROS: ros
     - perception
+    - contributing.md

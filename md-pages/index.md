@@ -1,1 +1,7 @@
-# Testing
+---
+hide:
+  - navigation
+  - toc
+---
+
+# Welcome
