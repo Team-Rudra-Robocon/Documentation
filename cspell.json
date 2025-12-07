@@ -23,8 +23,6 @@
       "ignoreCase": true
     }
   ],
-  "dictionaries": ["doc-terms"],
-  "ignoreRegExpList": [
-    "/\\b[A-Z][a-zA-Z]+\\b/g"
-  ]
+  "ignoreRegExpList": ["/\\b[A-Z][a-zA-Z]+\\b/g"],
+  "dictionaries": ["doc-terms"]
 }
