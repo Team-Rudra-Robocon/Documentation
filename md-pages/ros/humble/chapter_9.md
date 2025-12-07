@@ -62,7 +62,7 @@ this gets you the avg rate and frequency of the running program
 ros2 topic pub -r 10 (topic name)
 ```
 rate of publishing 10hz here
-say you have 2 publishers publishing at different rates , the receiver / subscriber will receive the data in that rate only , say one publisher is publishing at 10hz and other at 20 hz the publisher publishing at 20hz will send more data than 10hz puublisher , this helps in having different publisher publihs at different rates
+say you have 2 publishers publishing at different rates , the receiver / subscriber will receive the data in that rate only , say one publisher is publishing at 10hz and other at 20 hz the publisher publishing at 20hz will send more data than 10hz puublisher , this helps in having different publisher publish at different rates
 
 ### remaping a topic at runtime
 
@@ -77,7 +77,7 @@ ros2 run my_py_pkg robot_new_station --ros-args -r __node:=my_station -r robot_n
 
 ros2 run my_py_pkg robot_news_subscriber --ros-args -r robot_news = my_news 
 ```
-here robot_news is the hardcoded topic in my publisher and subscriber file , therfore the above command will check if there exixt any robotnews , if it does then it will replace it with mynews , now if you check the subscribtion it will not receive anything as the topic name is changed , you also need to change the topic name for subscriber as well. Now the subs will start printing the data 
+here robot_news is the hardcoded topic in my publisher and subscriber file , therfore the above command will check if there exixt any robotnews , if it does then it will replace it with mynews , now if you check the subscription it will not receive anything as the topic name is changed , you also need to change the topic name for subscriber as well. Now the subs will start printing the data 
 
 
 ### Monitering topics with rqt_graph
