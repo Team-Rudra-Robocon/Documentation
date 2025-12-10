@@ -49,5 +49,7 @@ markdown_extensions:
   - tables
   - admonition
   - pymdownx.snippets:
+      base_path: 
+        - .
       auto_append:
         - includes/abbreviations.md
