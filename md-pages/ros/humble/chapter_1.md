@@ -1,8 +1,9 @@
-#  Basics / Introduction Checking if it updates
+# Basics / Introduction 
 <sub>**Author**
 Isha Erande</sub>
  <P> Introduction to ROS2 ,what is that and how it is used 
 
+Testing changes ??
 Note : Before starting with ROS2 note that there are many distributions of ROS2 like 
 1. Humble(Ubuntu 22)
 2. Foxy (Ubuntu 20)
@@ -16,11 +17,11 @@ understanding the robot functionality
 it can help in programming high level functionality using easy programming
 it has packages which help in easily programming a robot with Nav2 and Rviz.
 
-#### when to use it ?
+### when to use it ?
 - when many inputs and output and requires many communication and use-case is that , for mobile
 robot that is used for locomotion of any sort
 
-#### what is ROS2 ?
+### what is ROS2 ?
 it provides a way to separated code into blocks , helps in code separation , where each node will communicate with each other which is powerful and scalable 
 It even helps in navigation (NAV2)
 it has builtin libraries and can be programmed in many programming language like 1 project in multiple languages 
