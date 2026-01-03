@@ -1,6 +1,8 @@
 # Image Processing for ABU Robocon 2026
 
-**Author:** Girija Kulkarni
+<sub>**Author**
+Girija Kulkarni</sub>
+ 
 
 ## Overview
 
@@ -34,13 +36,13 @@ The model trained on this data however was unable to detect the symbols properly
 
 #### Stage 2
 
-In the second stage, the Dataset was made by augmenting photographs of REAL and FAKE symbols. Augmentations included converting images to grayscale and rotating them clockwise or counterclockwise. Each symbol was augmented in 30 ways, resulting in a dataset of 30×30=900 images. Some of the images from the stage 1 dataset were used in the validation set of the model trained on second stage dataset.
+In the second stage, the Dataset was made by augmenting photographs of REAL and FAKE symbols. Augmentations included converting images to grayscale and rotating them clockwise or counter-clockwise. Each symbol was augmented in 30 ways, resulting in a dataset of 30×30=900 images. Some of the images from the stage 1 dataset were used in the validation set of the model trained on second stage dataset.
 
 The 15 FAKE images, 15 REAL images, and 1 image of R1 were clicked from the mobile phone and from a height of approximately two feet. This resulted in clicking the pictures of white rectangular papers, which have the FAKE and REAL symbols printed on them. These papers were kept on the floor, resulting in a very distant view of the symbol, and with a grey background behind the white paper.
 
-The augmented images were more difficult, but the model yolov9.pt resulted in a 90 percent mAP50 score. However, the issue faced was that the model detected the background in the frame as well. Furthermore, it was also unable to detect multiple symbols in the same frame, and the model performed poorly when it came to detecting fake R2 images as well as Fake R1.
+The augmented images were more difficult, but the model yoloV9.pt resulted in a 90 percent mAP50 score. However, the issue faced was that the model detected the background in the frame as well. Furthermore, it was also unable to detect multiple symbols in the same frame, and the model performed poorly when it came to detecting fake R2 images as well as Fake R1.
 
-The next step taken was to train using the yolov11n.pt as this model version too was to be tested to be more reliable and compatible with the system. This time, the data was altered and was created from the augmentation of the symbols on a white background and a bit enlarged. These images were further augmented with the effect of a white plain background and making the perception smaller.
+The next step taken was to train using the yoloV11n.pt as this model version too was to be tested to be more reliable and compatible with the system. This time, the data was altered and was created from the augmentation of the symbols on a white background and a bit enlarged. These images were further augmented with the effect of a white plain background and making the perception smaller.
 
 As a result, the model was unable to find the images with a colourful different background, and the Accuracy fell to 40 per cent.
 
