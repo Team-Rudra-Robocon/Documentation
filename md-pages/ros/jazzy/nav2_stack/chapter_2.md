@@ -13,7 +13,7 @@ after the installation of Turtlebot3 there is a need to change the ./bashrc file
  export TURTLEBOT3_MODEL=waffle
 ~~~
 
- For many of the new updates for Jazzy Jalisco , ROS LTS is still being built , therefore there may be a case where the installation commands dont work , if thats the case
+ For many of the new updates for Jazzy Jalisco , ROS LTS is still being built , therefore there may be a case where the installation commands don't work , if that's the case,
 
  For GAZEBO Harmonic compatible with Jazzy Jalisco Distro , the installation should be done manually and not by using the default ros2 distro , use the documentation page for gazebo and nav2 installation. 
 
