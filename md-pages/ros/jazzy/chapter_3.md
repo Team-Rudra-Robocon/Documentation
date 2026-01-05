@@ -11,7 +11,7 @@ create a workspace for ros2
 mkdir ros2_ws
 ```
 
-#### inside create a src directory , where ywe can colcon build it 
+<b>inside create a src directory , where we can colcon build it </b>
 
 ```
 colcon build
