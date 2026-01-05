@@ -20,38 +20,56 @@ colcon build
 this is done every time a package is created and modified
 
 
-### what is ROS2 node ? 
+## what is ROS2 node ? 
 its a subpart of package , nodes communicate with each other ans is used to communicate with each other , nodes are communicating with other packages as well.
 
 Nodes can be written in any languages , ie one in cpp and other in python , and they still can communicate with each other
 
-Creating a node : 
+### Creating a node
 
-we create a class and that class is your node , it needs a main() function and init and shutdown rclpy
-we can create node by importing node from rclpy
+We create a class and that class is your node, it needs a main() function and init and shutdown rclpy.
+
+We can create node by importing node from rclpy.
 
 
-### Running the node 
+### Running the node
 
-1. create executable and launch it 
-2. colcon build it and then source it 
-3. running using python3
+1. Create executable and launch it
+2. Colcon build it and then source it
+3. Running using python3
 
-<P>its better to use colcon to run the program ie : ros2 run myRobotController myFirstNode ie using ros2 to run it 
-This has its own benefits 
+Its better to use colcon to run the program ie :  
 
-installing it is by updating setup.py in the package
+~~~ bash
+ros2 run myRobotController myFirstNode 
+~~~
 
-<P>To create a node using OOP we have class , make a class which inherits from node and use that object to access or run a node. There are timer callbacks as well which helps you run a certain code in a specific time interval like the way we write while(1) , but calling the function in a certain amt of time.
+ie using ros2 to run it.
 
-The spin() function in ros is basically a function that keeps the node alive until forced to closed ie. keyboard interrupts
+This has its own benefits.
 
-The main function will always have the same functions :
+Installing it is by updating setup.py in the package.
+
+### Creating a node using OOP
+
+To create a node using OOP we have class, make a class which inherits from node and use that object to access or run a node.
+
+There are timer callbacks as well which helps you run a certain code in a specific time interval like the way we write while(1), but calling the function in a certain amt of time.
+
+The spin() function in ros is basically a function that keeps the node alive until forced to closed ie. keyboard interrupts.
+
+## Main function structure
+
+The main function will always have the same functions:
+
 1. To create a node (node object)
-2. spin the node or update it 
-3. close the node using shutdown() function 
+2. Spin the node or update it
+3. Close the node using shutdown() function
 
-### Tempelate for a ros2 node 
+
+## Tempelate for a ros2 node (Python)
+
+
 ```
 #!/usr/bin/env python3
 import rclpy
@@ -76,11 +94,11 @@ if __name__ == "__main__":
 
 This is the basic template refer this whenever needed.
 
-### ROS2 node in cpp 
+## ROS2 node in cpp 
 
 similar to python node , a minimal node can be made without using OOP , template for the same will be added here . We create a shared pointer to name the node.in cpp ros2 used shared pointers for making nodes. coz there isn't a need for new and delete , therefore shared pointers are used. The spin function expects a node parameter to make the node spin. being cpp we need to compile it therefore use it in "cmakelist" for the same , by using add_executable().
 
-initial ROS2 template without OOP:
+### initial ROS2 template without OOP:
 ```
 #include "rclcpp/rclcpp.hpp"
 
@@ -95,7 +113,8 @@ int main(int argc ,char **argv){
 }
 ```
 
-cpp template for rclcpp with OOP and initial Node 
+### cpp template for rclcpp with OOP and initial Node 
+
 ```
 #include "rclcpp/rclcpp.hpp"
 
@@ -158,7 +177,7 @@ int main(int argc, char **argv)
 }
 ```
 in the above program the counter is initialised in the constructor with value 0. and that value is printed.
-### Renaming a node at runtime 
+## Renaming a node at runtime 
 
 in ros2 you can rename the node say you have 5 lidar sensors then you need to run the same node 5 times , which is not a big issue but running nodes with same name can cause problems , therefore we require renaming it during runtime , it create communication problems and confusion , when you need to see information
 
