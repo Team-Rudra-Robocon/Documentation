@@ -29,7 +29,7 @@ Isha Erande</sub>
 
 ## Why ? 
 
-You need to move the robot around the whole map to generate its map where the lidar will scan each and every point in the system and save it in a ".map" file which is nothing just a picture of how the objects / obstrcution is placed. This is why the robot needs to move manually (linear and angular velocity). You can visualise the map from rViz.
+You need to move the robot around the whole map to generate its map where the lidar will scan each and every point in the system and save it in a ".map" file which is nothing just a picture of how the objects / obstruction is placed. This is why the robot needs to move manually (linear and angular velocity). You can visualise the map from rViz.
 
 ## What does the map contain ?
 
