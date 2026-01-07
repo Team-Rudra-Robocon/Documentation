@@ -13,9 +13,5 @@ nav:
     - chapter_11.md
     - chapter_12.md
     - chapter_13.md
-    - chapter_14.md
-    - chapter_15.md
-    - chapter_16.md
-    - chapter_17.md
-    - chapter_18.md
     - NAV2: nav2_stack
+    - GAZEBO AND SIMULATION: gazebo_urdf
