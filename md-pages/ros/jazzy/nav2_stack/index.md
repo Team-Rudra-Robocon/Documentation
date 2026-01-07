@@ -1,7 +1,6 @@
 # NAV2
 
-
-Nav2 or Navigation 2 consist of behavior trees which help in planning andn controlling the robots autonomously . Basically tells the robot how where and what to do / move. 
+Nav2 or Navigation 2 consist of behavior trees which help in planning and controlling the robots autonomously . Basically tells the robot how where and what to do / move. 
 
 The Nav2 stack is built using the following 
 1. Mapping 
@@ -20,4 +19,4 @@ These things are done using Behavior Trees , BTs are basically nodes that tell w
 5. Controller - How to move safety without damage ?
 
 
-therefore Nav2 is a flugin where everything can be custom made during runtime this helps with research and  helps in custom making robots.
+therefore Nav2 is a plugin where everything can be custom made during runtime this helps with research and  helps in custom making robots.
