@@ -17,9 +17,9 @@ Isha Erande</sub>
         
    
 3. Launch Rviz to visualise the local map / lidar readings: It helps in visualising the map and visualising the local reading ie only the ones te lidar is able to see
-
-    ros2 run nav2_map_server map_saver_cli -f nav2_maps/my_map
+  
         ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
+
         
 4. Save the map using the following:
 
