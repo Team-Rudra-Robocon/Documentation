@@ -24,4 +24,4 @@ Isha Erande</sub>
 
 4. choose goal 
 
-    The goal is then set using the "set goal" option , you can set the navigation goal and watch the robot move acordingly to the goal , similarly we can add waypoints to make it move iteratively over the points provided.
+    The goal is then set using the "set goal" option , you can set the navigation goal and watch the robot move accordingly to the goal , similarly we can add waypoints to make it move iteratively over the points provided.
