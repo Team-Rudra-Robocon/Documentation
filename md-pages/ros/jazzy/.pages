@@ -15,3 +15,4 @@ nav:
     - chapter_13.md
     - NAV2: nav2_stack
     - GAZEBO AND SIMULATION: gazebo_urdf
+    - MOVEIT: moveit_plugin

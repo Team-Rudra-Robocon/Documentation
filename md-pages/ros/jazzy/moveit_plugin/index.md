@@ -1,0 +1,1 @@
+ The following section contains the documentation for MoveIt , a plugin which is used for motion planning.
