@@ -6,4 +6,4 @@ Isha Erande</sub>
 
 1. what is moveit ? 
    
-   moveit isa motion planning plugin used in ros.
+   moveit is a motion planning plugin used in ros.
