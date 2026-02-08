@@ -1,4 +1,4 @@
-# Installation 
+# Basics / Introduction
 
 <sub>**Author**  
 Isha Erande</sub>
