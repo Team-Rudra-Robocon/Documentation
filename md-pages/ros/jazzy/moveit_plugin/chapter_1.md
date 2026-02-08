@@ -3,7 +3,7 @@
 <sub>**Author**  
 Isha Erande</sub>
 
-As this is a plugin inside ROS , we don't need to install a seperate package or a seperate executable file for it , use the following commands to install it . 
+As this is a plugin inside ROS , we don't need to install a separate package or a separate executable file for it , use the following commands to install it . 
 
 Note: This requires you to have ROS2 installed and setup according to the UBUNTU distribution.
 
