@@ -4,7 +4,7 @@ Isha Erande</sub>
 
 ## ROS2 Jazzy Jalisco
  
-These are the following commands for installation
+These are the following commands for installation , the current installation is for the Humble version and not Jazzy , therefore the installation will work mostly if you change the distribution from "humble" to "jazzy"
 
 ```
 sudo apt upgrade 

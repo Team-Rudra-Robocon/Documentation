@@ -3,7 +3,7 @@
 <sub>**Author**  
 Isha Erande</sub>
 
-Note: The course I followed was intended for a robotic arm with 6 degrees of freedom , but this can be done using any robot that u have built.
+__Note: The course I followed was intended for a robotic arm with 6 degrees of freedom , but this can be done using any robot that u have built.__
 
 Moveit Cannot directly be used on hardware , it needs to be configured on software before shifting to hardware. Therefore to use moveit we need a robot or at least a simulation of robot. Robot can be simulated using URDF and a simulation software like Gazebo or IsaacSim etc. Therefore look at my [ROS2-Gazebo/urdf](../gazebo_urdf/index.md) or the official [ROS2-GAZEBO](https://docs.ros.org/en/jazzy/Tutorials/Intermediate/URDF/URDF-Main.html) documentation to actually build and visualise a robot.
 

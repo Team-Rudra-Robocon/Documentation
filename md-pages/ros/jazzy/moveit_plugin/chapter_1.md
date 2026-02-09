@@ -23,9 +23,12 @@ For jazzy its recommended to use Cyclone DDS , we need to install and export it
    3. add the following line at the end before ros2 has been exported-> `export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp` 
    4. save the file using `CTRL+O , ENTER` then `CTRL-X`.
 
-   
-   set of commands 
-ros2 run tf2_ros tf2_echo base_link left_gripper_link -> to know the absolute position of the end effector.
+---
 
-ros2 control list_controllers -> to know which controllers are active , and working 
+   set of commands 
+
+
+`ros2 run tf2_ros tf2_echo base_link left_gripper_link` -> to know the absolute position of the end effector.
+
+`ros2 control list_controllers` -> to know which controllers are active , and working 
 
