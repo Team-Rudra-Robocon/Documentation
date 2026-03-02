@@ -50,3 +50,7 @@ Use the following command to launch:
 ~~~bash
 ros2 launch <robot_name>_moveit_config demo.launch.py
 ~~~
+
+
+
+give it a goal position by selecting a group , and then giving it a pose or random position as the goal state. check if plan and execution is working , if yes then good work , else just GPT it.
