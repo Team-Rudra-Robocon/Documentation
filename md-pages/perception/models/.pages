@@ -1,4 +1,2 @@
-nav: 
-  - Image_processing_and_Dataset_synthesis.md 
-  - yolo.md
-    
+nav:
+    - yolo.md
