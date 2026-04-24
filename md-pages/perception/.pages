@@ -1,3 +1,4 @@
 nav:
     - Camera: camera
     - Models: models
+    - Image Processing: image_processing

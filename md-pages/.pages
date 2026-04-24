@@ -1,6 +1,6 @@
 nav:
     - index.md
     - ROS: ros
-    - perception
+    - Perception: perception
     - contributing.md
     - Version Control: versionControl
