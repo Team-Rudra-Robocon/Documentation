@@ -2,7 +2,9 @@
 <sub>**Author**
 Isha Erande</sub>
 
-##  These are the following commands for installation
+## ROS2 Jazzy Jalisco
+ 
+These are the following commands for installation , the current installation is for the Humble version and not Jazzy , therefore the installation will work mostly if you change the distribution from "humble" to "jazzy"
 
 ```
 sudo apt upgrade 
@@ -60,4 +62,5 @@ ros2 run demo_nodes_py listener
 sudo apt install ros-humble-gazebo-ros
   sudo apt install ros-humble-gazebo-plugins
 ```
- ## *Remember to source your code before using ros2*
+
+## *Remember to source your code before using ros2*

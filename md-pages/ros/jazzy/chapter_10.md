@@ -31,6 +31,7 @@ service work ?
 You can directly create a service using rcl library , and also it has a single server 
 with many nodes for a single service. The service will exist when a server is created.
 
+---
 ### Creating a server
 1. A service is created inside the server node
  ``` node.create_service(typeOfService , 
@@ -44,6 +45,7 @@ numbers example the request is the 2 numbers coming from clients and the respons
 the sum. therefore the callback function does the job of calculating the sum and 
 returning the appropriate response.
 
+---
 ### Creating a client
 1. without using oop this method is used directly inside the main function without 
  using oop to create a node ie directly creating the node inside the main function.
@@ -68,7 +70,7 @@ to spin until the future is complete
 or the request is processed we store the requested response in a variable and then 
 print it .
 
-
+---
 2. with oop what we do using OOP is we create a class inheriting from node like done 
  previously , and then what we do is we create a function inside the node that sends 
  out requests to the clients , that function creates a client and then adds requests
@@ -88,11 +90,12 @@ the program without oop is easier and simpler to implement , but the program usi
 oop is usually used in a file or a project , it is much more complex but it 
 gives us.
 
+---
 ### ROS2 client for cpp 
 
 the issue with creating a client with oop is that , while calling the callback function inside the constructor the "future.get()" function will stop the execution and the the node will not spin therefore we need to call the callback service function on a new thread , for that you need to create new thread and use that for calling that function thereby letting the program execute
 
-
+---
 ## How to debug Services using CLI / Terminal
 ``` 
 ros2 service
@@ -115,7 +118,7 @@ processed(The first parameter from the create service function)
 
 rclpy also helps in creating a client and using client service
 
-
+---
 ## remap a service at runtime
 
 just like nodes and topic we cna remap the services as well , similarly by using 
