@@ -1,4 +1,5 @@
 nav:
+    - index.md
     - Camera: camera
     - Models: models
     - Image Processing: image_processing
