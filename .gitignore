@@ -3,4 +3,5 @@ book
 .firebase
 .vscode/*
 .vscode/tasks.json
+.vscode
 site
