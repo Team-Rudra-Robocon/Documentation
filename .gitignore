@@ -2,5 +2,6 @@ book
 .venv
 .firebase
 .vscode/*
-!.vscode/tasks.json
+.vscode/tasks.json
+.vscode
 site
