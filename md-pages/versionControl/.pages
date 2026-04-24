@@ -1,3 +1,4 @@
 nav:
+    - index.md
     - Linux: linux_
     - Windows: windows_
