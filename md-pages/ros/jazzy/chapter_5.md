@@ -8,25 +8,25 @@ its a ros2 library , also called ros client library , its handled purely in c an
 
 ros2 cli has many commands
 
-```
+```bash
 ros2 run
 ```
  This command expect you to have a package and an executable <br> eg: 
-```
+```bash
 ros2 run myRobotController myFirstNode
 ```
-here myRobotController is the package and myFirstNode is the executable , 
+here "myRobotController" is the package and myFirstNode is the executable , 
 
 if we need to launch a package , the package needs to be installed and should be console build , the executables can be seen inside the package , PS: Ros2 also has its inbuilt packages and executables 
 
 you can use -h to see how the command is used 
 
-```
+```bash
 ros2 node info/list
 ```
 this gets you the nodes that are currently running with the list and the info to that node , it also gets you info abt the publisher and subscriber , rosout is oneof the publisher that helps you output the logger function to print the things on the terminal 
 
-```
+```bash
 ros2 pkg create 
 ros2 run
 ros2 node list

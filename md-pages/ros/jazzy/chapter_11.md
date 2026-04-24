@@ -9,6 +9,7 @@ ros2 interfaces show example_interfaces
 ```
 the example_interfaces is a package inbuilt in ros that shows has its own msgs and services init . We can technically create msgs/services inside any pkgs , but its a good practice to keep your msgs/service definition in a single different package , where there is no code just msgs/service definition.
 
+---
 ### ROS2 msg:
 messages in ROS2 are certain type of information which are published to a topic. the information that we send to the topic are called msgs , therefore that msgs should have a type , the msgs type is what we can change using ros2 msgs. When we create a publisher we need to specify the msg type as one of the arguments , that msgs type we can customize using ros2 msgs. 
 Steps to create the msgs definition for a custom msg type:
@@ -52,6 +53,7 @@ we also need to add the export line inside
 
 we then include the node inside the node oyu want to create publisher/subscriber in
 
+---
 ### ROS2 service 
  Similar to ROS2 packages , the ROS2 service is used for server/client communication. 
 1. To create a custom srv definition we first need to create a directory inside the package , called "srv"
@@ -66,6 +68,7 @@ inside the interfaces in cMake file add .srv file and add new line inside it.
 3. then directly build it then the service is ready.use this inside the service type by importing it .
 
 
+---
 ### Debugging msgs and Srv with command line(terminal)
 ```
 ros2 interface show

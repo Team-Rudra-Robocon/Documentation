@@ -17,7 +17,7 @@ A topic has a msg type and the pubs and subs should follow the msg type. This ca
 
 This can help in separating the code and communicating using topics.
 
-
+---
 ## Creating a Publisher
 
 ```
@@ -31,6 +31,7 @@ this function helps in creating a publisher and add the topic name to it  , the 
 
 this helps in publishing the msg to the topic.
 
+---
 ## Creating a Subscriber : 
 
 ```
@@ -40,7 +41,7 @@ this helps in publishing the msg to the topic.
 this function creates a subscription to the topic mentioned , it even stored to data into a callback function which needs to be created inside the node itself, then it that data can be printed on the terminal using
 ``` getlogger().info() ```
 
-
+---
 ### more about topics and how to debug topic using command line tools
 1. ```ros2 topic``` : 
 this can handle topics and it has many functionalities to debug it .
@@ -54,6 +55,7 @@ this can handle topics and it has many functionalities to debug it .
 6. ```ros2 topic pub -r 10 (topic name)```: rate of publishing 10hz here. eg.
 say you have 2 publishers publishing at different rates , the receiver / subscriber will receive the data in that rate only , say one publisher is publishing at 10hz and other at 20 hz the publisher publishing at 20hz will send more data than 10hz publisher , this helps in having different publisher publish at different rates
 
+---
 ## remapping a topic at runtime
 
 like remapping a node we can also rename a topic at runtime 
@@ -69,5 +71,12 @@ ros2 run my_py_pkg robot_news_subscriber --ros-args -r robot_news = my_news
 ```
 here robot_news is the hardcoded topic in my publisher and subscriber file , therefore the above command will check if there exist any "robotnews" , if it does then it will replace it with "mynews" , now if you check the subscription it will not receive anything as the topic name is changed , you also need to change the topic name for subscriber as well. Now the subs will start printing the data 
 
-
+---
 ### Monitoring topics with rqt_graph
+
+rqt graph gets you the visualised information about active topics , services or action servers.
+~~~bash
+rqt_graph
+~~~
+
+this gets you all the publisher , subscribers , servers clients etc active and interacting visualised in form of a graph.
