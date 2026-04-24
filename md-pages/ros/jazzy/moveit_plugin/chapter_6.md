@@ -11,6 +11,6 @@ There are many ways to use CPP to plan a motion plan.
 
 
 
-Orientation Control : This keeps the orientation of the end effector to be fixed and without changing the end effector orientation , it plans a path acordingly , its a part of Cartesian Goal.
+Orientation Control : This keeps the orientation of the end effector to be fixed and without changing the end effector orientation , it plans a path accordingly , its a part of Cartesian Goal.
 
 Robot Workspace : Moveit allows you to create a robot workspace as well ? use the moveit group for creating robot workspace `group.createWorkspace(x_min , y_min , z_min , x_max , y_max , z_max)` , for each group.
