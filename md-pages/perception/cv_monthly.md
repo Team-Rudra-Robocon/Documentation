@@ -1,0 +1,7 @@
+| Month | Dataset Description | Model Type | Results | Inferences |
+|---|---|---|---|---|
+| December | Roboflow dataset sorting, white background, close-up images of symbols augmented previously on Roboflow. From 25th December, new dataset curation. Symbols with red and blue cube backgrounds. | `yolov8s.pt` | Almost 80% accuracy with white background using `yolo11n.pt`, and around 90% with coloured background. | Faced issues recognizing multiple symbols in one frame and also issues with blue background. |
+| January | Multiple KFS in one frame with coloured background and heavy overlapping, but comparatively less noise. | `yolo11n.pt` | Almost 95% accuracy with better detection, AdamW, 512 frame. | Workable on Raspberry Pi with webcam response via SSH. Single KFS detection in a frame. |
+| February | Switched to grayscale, 640x640 frame with a dataset of 150K. Preference for two classes: R2 and Others. | `yolo11n.pt` | Approximately 95% accuracy. | Two-class based detection works better than three-class. Faced issues in fake detection, R1 detection error, and memorization over generalization, leading to poor real-time reaction. |
+| March | Switched to symbol-based training in grayscale. Dataset size: 10K (8K training, 2K validation). | `yolo11n.pt`, `yolov8n.pt` | Almost 97% accuracy in mAP50-95 (validation). | Faster real-time results, though detection takes slightly longer depending on angle of view. |
+| April |  |  |  |  |
