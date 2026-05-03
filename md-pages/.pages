@@ -3,5 +3,5 @@ nav:
     - ROS: ros
     - Perception: perception
     - Version Control: versionControl
-
+    - How To: howTo
     - contributing.md
