@@ -1,122 +1,134 @@
-# Digital Camera Working
+# Digital Camera Working:
 
-Instead of film, a digital camera uses an **image sensor** that converts light into electrical charges.
+Instead of film, a digital camera has a sensor that converts light into electrical charges. Most cameras use image sensor: Charged Couple Device( CCD )
 
-Most cameras use:
-- **CCD (Charge-Coupled Device)**
-- **CMOS (Complementary Metal Oxide Semiconductor)**
+Some cameras use : Complementary Metal Oxide Semiconductor(CMOS)
 
-Both CCD and CMOS sensors convert light into electrons.
+Both CCD and CMOS convert light into electrons
 
-> Note: Light travels at approximately **300,000 km/s** (186,000 miles/s).
+#Light travels at a speed of around 30000 km/sec or 186000 miles/sec
 
-## CCD (Charge-Coupled Device)
+## CCD:
 
-- Transports charge across the chip and reads it at one corner of the array.
-- An ADC (Analog-to-Digital Converter) converts each pixel's charge into a digital value.
+It transports charge across chip and reads it at one corner in the array.
 
-### Advantages
-- High image quality
-- Low noise
+ADC then turns each pixel’s value into a digital value by measuring the amount of charge at each photosite and converting that measurement to binary form.
 
-### Disadvantages
-- High power consumption
+## CMOS:
 
-## CMOS (Complementary Metal Oxide Semiconductor)
+These devices use several transistors at each pixel to amplify and move the charge using more traditional wires.
 
-- Uses transistors at each pixel to amplify and move charge.
+CMOS sensor traditionally consumes little power but CCD consumes a lot of power(100 times more than CMOS)
 
-### Advantages
-- Low power consumption
-- Lower manufacturing cost
+CCD creates high quality, low noise images, while CMOS images are more noisy.
 
-### Disadvantages
-- Traditionally noisier images
-- Lower light sensitivity
+CMOS has lower light sensitivity as many photons hit the transistor instead of photodiode.
 
-# Resolution
+## Resolution:
 
-Resolution is the amount of detail a camera can capture and is measured in pixels.
+The amount of detail a camera can capture is called as Resolution and it is measured in pixels.
 
-| Resolution | Total Pixels | Description |
-|------------|-------------|-------------|
-| 256 × 256 | ~65,000 | Very cheap cameras |
-| 640 × 480 | ~307,000 | Email and web images |
-| 1216 × 912 | ~1.1 MP | Good for printing |
-| 1600 × 1200 | ~2 MP | High resolution |
-| 2240 × 1680 | ~4 MP | 4 MP cameras |
-| 4064 × 2704 | ~11.1 MP | High-end cameras |
+The more the pixels the better the image is as it captures pictures without blurry or grainy finish and has more refined details.
 
-# Color Capture
+### Types of Resolution:
 
-Each photosite is color-blind and records only light intensity.
+1. 256 x 256 :found on very cheap cameras, total 65000 pixels in image.
+2. 640 x 480: low end on most real Cameras. Ideal resolution for email pictures or site posting/ small scale.
+3. 1216 x 912 : This is a megapixel image of size ~11,09,000 total pixels. Good for printing pictures
+4. 1600 x 1200: Almost 2 Million total pixels, “High Resolution”
+5. 2240 x 1680 : found on 4 Megapixel cameras
+6. 4064 x 2704: Top line digital cameras with 11.1 megapixels
 
-Methods:
-1. Three-sensor system using a beam splitter.
-2. Rotating RGB filters.
-3. Bayer filter and demosaicing.
+Unfortunately each photosite is colourblind. It only keeps track of total intensity of the light that strikes it surface. For getting full colour, most use filtering to look at light in its three primary colours. Highest quality cameras use three sensors.
 
-# Bayer Filter
+# A beam spitter directs the light to different sensors.
 
-The Bayer pattern contains:
-- Red pixels
-- Green pixels
-- Blue pixels
+Each sensor gets an identical look at the image; but because of the filters each sensor only responds to one of the primary colours.
 
-There are twice as many green pixels because the human eye is most sensitive to green light.
+The advantage of this method is that the camera records each of the three colours at each pixel location.
 
-Interpolation and demosaicing algorithms estimate the full color of each pixel.
+# Another method is to rotate series of red, blue and green filters in front of single sensor.
 
-# Controlling Light
+The sensor records three separate images in rapid succession. This method also provides information on all three colours at each pixel location; but since the three images aren’t taken at precisely the same moment, both camera and target of the photo must remain stationary for all the three readings.
 
-## Aperture
-Controls the size of the opening through which light enters the camera.
+## Demosaicing Algorithms:
 
-## Shutter Speed
-Controls how long light reaches the sensor.
+### Colour Filtering:
 
-## Focal Length
-Distance between lens and sensor, affecting magnification and zoom.
+A more economical and practical way to record the primary colours is to permanently place a filter called a colour filter array.
 
-# Types of Lenses
+By breaking up the sensor into a variety of red, blur and green pixels, it is possible to get enough information in the denereal vicinity of each sensor to make very accurate guesses about the true colour at that location.
 
-1. Fixed Focus, Fixed Zoom
-2. Optical Zoom with Autofocus
-3. Digital Zoom
-4. Interchangeable Lens System
+This process of looking at the other pixels and making and educated guess is called interpolation.
 
-# Image Formats
+The most common pattern of filters is the Bayer Filter pattern.
 
-## TIFF (.tif, .tiff)
-- Lossless
-- Typically uncompressed
+# Bayer Filter:
 
-## JPEG (.jpg, .jpeg)
-- Lossy compression
-- Small file size
+This pattern alternated a row of red and green filters with a row of blue and green filters.
 
-## GIF (.gif)
-- Supports 256 colors
-- Suitable for web graphics
+The pixels are not evenly divided, there are as many as green pixels as there are red and blue combined.
 
-## PNG (.png)
-- Lossless
-- Supports transparency
+This is because human ye is not equally sensitive to all three colours.
 
-## WebP (.webp)
-- Modern format developed by Google
-- Smaller file sizes
+Its necessary to include more information from green pixels in order to create an image that the eye will perceive as ‘true colour’
 
-# CCD vs CMOS
+The advantages of this method are that only one sensor is required and all the colour information (R, G and B) is recorded at the same moment.i.e. camera can be smaller and cheaper.
 
-| Feature | CCD | CMOS |
-|----------|------|-------|
-| Power Consumption | High | Low |
-| Image Quality | Higher | Good |
-| Noise | Low | Higher |
-| Cost | Higher | Lower |
+The raw output from a sensor with Bayer filter is a mosaic of red, green and blur pixels of different intensity.
 
-# References
+Digital cameras use specialized demosaicing algorithms to convert this mosaic into an equally sized mosaic of true colours.
 
-- https://www.explainthatstuff.com/digitalcameras.html
-- https://electronics.howstuffworks.com/camera.htm
+The key is that each coloured pixel can be used more than once. The true colour of a single pixel can be determined by averaging the values from closest surrounding pixels.
+
+Digital camera has to control the amount of light that reaches the sensor.
+
+For this is uses:
+
+## A. Aperture:
+
+The size of the opening in camera is its aperture. The aperture is automatic in most digital cameras, but some allow manual adjustment to gice professionals and hobbyists more control over the final image.
+
+## B. Shutter speed:
+
+It is the amount of time that a light can pass through the aperture. Unlike film, light sensor in Digital Camera can be reset electronically, so digital cameras have a digital shutter rather than a mechanical shutter.
+
+#Focal length:
+
+It is the distance between the lens and the surface of the sensor. It also determines the magnification or zoom when you look through the camera.
+
+## Types of lenses of Digital Camera:
+
+- Fixed Focus, Fixed Zoom lenses
+- Optical-Zoom lenses with automatic focus
+- Digital Zoom
+- Replaceable lens system
+
+## Types of Image Formats:
+
+### 1. Tiff(.tif, .tiff):
+
+Tagged Image File Format. It stores image data without losing any data. It doesn’t perform any compression of image
+
+### 2. JPEG(.jpg, .jpeg):
+
+Joint Photographic Experts Group. It is lossy format as data lost to reduce size of image. Good for digicam, non professional prints, Email, PPT, etc
+
+### 3. GIF(.gif):
+
+GIF is also know as Graphics Interchange Format files. These are used for Web Graphics. It supports 256 colours.
+
+### 4. PNG(.png):
+
+Portable Network Graphics files are lossless. It supports 16 million colours, made to replace GIF.
+
+### 5. Webp:
+
+Made by Google to replace JPEG. It uses RIFF-based container based on intra-frame cooling VP8.
+
+## Resources:
+
+https://www.explainthatstuff.com/digitalcameras.html
+
+https://electronics.howstuffworks.com/camera.htm
+
