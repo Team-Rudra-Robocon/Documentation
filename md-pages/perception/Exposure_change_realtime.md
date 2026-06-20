@@ -1,26 +1,19 @@
 # Real-Time Exposure Control Investigation on ReCamera 2002W Using Node-RED
+While testing a custom YOLO (You Only Look Once) model on the ReCamera 2002W, it was noticed that the model performed differently under different lighting conditions. When the surroundings were dark, the camera image became difficult to see and object detection accuracy dropped. Similarly, in very bright conditions, some parts of the image became overexposed, which also affected detection.
 
-## Introduction
-
-While testing a custom YOLO model on the ReCamera 2002W, it was noticed that the model's performance changed under different lighting conditions. Dark scenes made objects harder to detect, while very bright scenes sometimes caused parts of the image to become overexposed.
-
-To improve image consistency, an attempt was made to create a real-time exposure control system using Node-RED. The idea was to monitor the brightness of the scene and automatically adjust camera exposure before the image was processed by the YOLO model.
+Since YOLO depends heavily on the quality of the input image, an attempt was made to automatically adjust the camera exposure based on the brightness of the scene. The goal was to make the camera image more consistent before sending it to the YOLO model.
 
 ---
-
-## Objective
 
 The main goals of this work were:
 
-- Read scene brightness in real time.
-- Adjust camera exposure automatically.
-- Improve image quality for YOLO inference.
-- Implement the solution using Node-RED.
-- Keep the existing YOLO workflow unchanged.
+- Monitor scene brightness in real time.
+- Adjust camera exposure automatically based on lighting conditions.
+- Improve image consistency before YOLO inference.
+- Integrate exposure control into the existing Node-RED workflow.
+- Keep the YOLO pipeline unchanged.
 
 ---
-
-## Initial Approach
 
 The first idea was to place a Function node between the camera node and the YOLO model node.
 
@@ -30,19 +23,19 @@ The planned flow was:
 Camera → Function Node → YOLO Model → Preview
 ```
 
-The Function node would check image brightness and decide whether the exposure should be increased or decreased.
+The Function node was expected to check whether the image was too dark or too bright and then adjust the exposure accordingly.
 
-However, this approach quickly ran into problems. Function nodes can modify message data, but they cannot directly change hardware-level camera settings such as exposure.
+However, this approach did not work. Function nodes can only process data inside Node-RED messages and cannot directly modify hardware settings such as camera exposure.
 
-In addition, modifying the image payload caused compatibility issues with the YOLO node because the model expects image data in a specific format.
+Another issue was that modifying the image payload caused problems for the YOLO node because the model expects image data in a fixed format.
 
-Because of these limitations, this approach was abandoned.
+Because of these limitations, a different method had to be explored.
 
 ---
 
 ## Attempt to Access Brightness Information
 
-The next step was to determine whether brightness information was already available from the camera node.
+The next step was to determine whether brightness information was available from the camera node.
 
 A Debug node was connected directly to the camera output.
 
@@ -58,7 +51,7 @@ Some of the messages received were:
 { code: 0, data: array[2], name: "light", type: 0 }
 ```
 
-Based on typical Node-RED camera workflows, an attempt was made to access brightness information using:
+Based on typical camera workflows, an attempt was made to access brightness information using:
 
 ```javascript
 msg.meta.brightness
@@ -86,9 +79,9 @@ The script was executed using:
 python3 -u /userdata/exposure.py
 ```
 
-The idea was to use the Exec node to launch the script and update exposure values dynamically.
+The idea was to use an Exec node to launch the script and update exposure values dynamically.
 
-However, another problem appeared.
+However, another issue appeared.
 
 Each time the Exec node received a message, a new Python process was started. Since camera frames are generated continuously, multiple copies of the script could be launched at the same time.
 
@@ -96,20 +89,18 @@ Potential issues included:
 
 - Increased CPU usage
 - Multiple scripts running simultaneously
-- Difficulty managing exposure state
-- Possible interference with the inference pipeline
+- Difficulty managing exposure values
+- Possible interference with the YOLO inference pipeline
 
-Because of these limitations, this approach was also not considered suitable.
+Because of these limitations, this approach was not considered suitable.
 
 ---
 
-## Exploring ISP and Camera Controls
+## Exploring Camera Controls
 
 Several commands were investigated to determine whether exposure settings could be accessed directly.
 
-Commands explored included:
-
-### Checking ISP Information
+### Checking Image Signal Processor (ISP) Information
 
 ```bash
 cat /sys/class/isp/isp_dev/brightness
@@ -121,7 +112,7 @@ cat /sys/class/isp/isp_dev/brightness
 ls /sys/class/isp/
 ```
 
-### Listing Camera Controls
+### Listing Available Camera Controls Using Video for Linux 2 (V4L2)
 
 ```bash
 v4l2-ctl -d /dev/video0 --list-ctrls
@@ -133,7 +124,7 @@ v4l2-ctl -d /dev/video0 --list-ctrls
 v4l2-ctl -d /dev/video0 --set-ctrl=exposure_absolute=<value>
 ```
 
-The idea was to read brightness values, calculate a suitable exposure level, and then update the camera using V4L2 controls.
+The idea was to read brightness values, calculate a suitable exposure value, and then update the camera using Video for Linux 2 (V4L2) controls.
 
 ---
 
@@ -167,17 +158,17 @@ Preview
 
 ## Problems Encountered
 
-Several issues were encountered during development:
+Several issues were encountered during development.
 
 ### Missing Brightness Data
 
 The expected brightness value was not available in the camera node output.
 
-Attempts to access brightness data resulted in errors because the required fields did not exist.
+Attempts to access brightness information resulted in errors because the required fields did not exist.
 
 ### Function Node Errors
 
-The following error occurred when trying to access brightness information:
+The following error occurred while trying to read brightness information:
 
 ```text
 Cannot read properties of undefined (reading 'brightness')
@@ -197,19 +188,32 @@ Although exposure-related commands were identified, it was not confirmed whether
 
 Throughout testing, no visible changes were observed in the camera feed.
 
-Even when exposure-control ideas were implemented conceptually, the image displayed by the camera node remained unchanged.
+Even when exposure-control commands were generated and executed, the image displayed by the camera node remained unchanged.
 
 ---
 
 ## Results
 
-The goal of creating a working real-time exposure control system was not achieved.
+Several approaches were explored to implement real-time exposure control on the ReCamera 2002W.
 
-During testing:
+The Function node approach was unable to control camera exposure because Node-RED Function nodes only process message data and do not provide direct access to camera hardware settings.
 
-- Brightness information could not be reliably obtained from the camera node.
-- Function-node based exposure control failed due to missing data fields.
-- The Python-based approach introduced process management issues.
-- No confirmed method for controlling exposure from Node-RED was found.
-- No visible change was observed in the camera output.
-- The custom YOLO pipeline remained functional, but exposure control could not be integrated successfully.
+Attempts to read brightness information from the camera output were also unsuccessful. The expected brightness field was not present in the message structure, resulting in errors such as:
+
+```text
+Cannot read properties of undefined (reading 'brightness')
+```
+
+A Python-based solution was then explored using an Exec node. However, this introduced another issue where multiple Python processes could be started as new messages entered the flow, making the approach difficult to manage.
+
+Further investigation was carried out using Image Signal Processor (ISP) paths and Video for Linux 2 (V4L2) commands. While exposure-related commands could be identified and executed, there was no clear indication that these commands were affecting the active camera stream used by Node-RED.
+
+After testing multiple methods, no visible change was observed in the camera feed. As a result, real-time exposure control was not successfully implemented.
+
+The testing process helped identify several limitations of the current Node-RED workflow:
+
+- Brightness values were not directly available from the camera node.
+- Function nodes could not modify hardware-level camera settings.
+- Python scripts launched through the Exec node were difficult to manage because multiple processes could be created.
+- Exposure commands could be executed, but their effect on the active camera stream could not be verified.
+- No measurable or visible improvement was observed in the camera feed.
